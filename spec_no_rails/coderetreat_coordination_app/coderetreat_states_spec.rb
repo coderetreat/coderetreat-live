@@ -1,3 +1,4 @@
+require 'state_machine'
 require 'coderetreat_states'
 
 class DummyCoderetreat

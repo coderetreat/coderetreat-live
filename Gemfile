@@ -6,6 +6,8 @@ gem 'haml'
 
 gem 'sqlite3', group: [:development, :test]
 
+gem 'state_machine'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
