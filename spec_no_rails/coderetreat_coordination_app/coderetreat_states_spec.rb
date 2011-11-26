@@ -13,10 +13,22 @@ describe "The states a coderetreat can be in" do
     subject.should be_not_started
   end
 
-  context "starting a coderetreat" do
-    it "sets the state to started" do
+  context "when not_started" do
+    it "can be started" do
       subject.start!
       subject.should be_started
+      subject.should_not be_not_started
+    end
+  end
+
+  context "when started" do
+    before do
+      subject.start!
+    end
+    it "can be not_started" do
+      subject.not_started!
+      subject.should be_not_started
+      subject.should_not be_started
     end
   end
 end
