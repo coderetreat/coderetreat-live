@@ -4,8 +4,13 @@ Feature: Viewing the currently running coderetreats for the day
     Given there is a coderetreat scheduled today
     And the coderetreat has started
 
+  Scenario: Coderetreats that haven't started at all show up as upcoming
+    Given the coderetreat has not started
+    When I view today's coderetreats
+    Then I should see the coderetreat hasn't started yet
+
   Scenario: Coderetreats that haven't started a session yet show they are during their intro
-    Given the coderetreat hasn't start a session
+    Given the coderetreat hasn't started a session
     When I view today's coderetreats
     Then I should see the coderetreat is during its intro
 
