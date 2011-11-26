@@ -1,4 +1,12 @@
 CoderetreatCoordinationApp::Application.routes.draw do
+  resources :coderetreats, only: [] do
+    collection do
+      get :todays
+    end
+  end
+
+  root :to => "coderetreats#todays"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

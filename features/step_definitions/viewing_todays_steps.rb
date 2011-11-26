@@ -1,5 +1,5 @@
 When /^I view today's coderetreats$/ do
-  pending # express the regexp above with the code you wish you had
+  visit todays_coderetreats_path
 end
 
 Then /^I should see the coderetreat hasn't started yet$/ do

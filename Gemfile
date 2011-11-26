@@ -19,6 +19,8 @@ end
 
 gem 'jquery-rails'
 
+gem 'rspec-rails', group: [:development, :test]
+
 group :development do
   gem 'heroku'
 end
@@ -26,7 +28,6 @@ end
 group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
-  gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'database_cleaner'
 end
