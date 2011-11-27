@@ -1,8 +1,12 @@
 CoderetreatCoordinationApp::Application.routes.draw do
-  resources :coderetreats, only: [:edit] do
+  resources :coderetreats, only: [] do
     collection do
       get :todays
     end
+  end
+
+  scope :module => :admin do
+    resources :coderetreats, only: [:edit]
   end
 
   root :to => "coderetreats#todays"
