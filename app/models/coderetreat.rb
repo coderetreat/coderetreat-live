@@ -1,3 +1,5 @@
+require 'coderetreat_states'
+require 'presenters/coderetreats'
 class Coderetreat < ActiveRecord::Base
   include CoderetreatCoordinationApp::CoderetreatStates
 

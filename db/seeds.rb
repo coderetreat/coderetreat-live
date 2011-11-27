@@ -1,7 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Coderetreat.destroy_all
+
+5.times {|index| Coderetreat.create!(scheduled_for: Date.today, city: "Unstarted City #{index}", country: "Country #{index}") }
+
