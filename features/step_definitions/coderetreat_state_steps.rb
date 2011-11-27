@@ -1,5 +1,5 @@
 Given /^there is a coderetreat scheduled today$/ do
-  event = Coderetreat.create! scheduled_for: Date.today, city: "City", country: "Counter"
+  event = Coderetreat.create! scheduled_for: Date.today, location: "Location"
   coderetreats << event
 end
 
