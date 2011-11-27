@@ -4,21 +4,17 @@
   %header
     %h2 Not Started
   %ul
-    -@coderetreats.not_started.each do |coderetreat|
-      %li{id: dom_id(coderetreat)}=coderetreat.location
+    =render partial: "coderetreat", collection: @coderetreats.not_started
 
 %section.coderetreats.just_started
   %header
     %h2 Just Started
   %ul
-    -@coderetreats.just_started.each do |coderetreat|
-      %li{id: dom_id(coderetreat)}=coderetreat.location
-
+    =render partial: "coderetreat", collection: @coderetreats.just_started
 
 %section.coderetreats.doing_introduction
   %header
     %h2 Doing Intro
   %ul
-    -@coderetreats.in_introduction.each do |coderetreat|
-      %li{id: dom_id(coderetreat)}=coderetreat.location
+    =render partial: "coderetreat", collection: @coderetreats.in_introduction
 
