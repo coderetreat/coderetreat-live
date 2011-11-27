@@ -13,7 +13,7 @@ module CoderetreatsHelper
   def coderetreat_next_state(coderetreat)
     case coderetreat.state_name
     when :not_started
-      ["Start!", :start]
+      ["Start", :start]
     when :started
       ["Do Introduction", :in_introduction]
     when :in_introduction
