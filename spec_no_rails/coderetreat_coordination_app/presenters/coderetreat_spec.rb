@@ -2,7 +2,7 @@ require 'presenters/coderetreats'
 
 describe "Presenting a list of coderetreats" do
   describe "#not_started" do
-    subject { CoderetreatCoordinationApp::Presenters::Coderetreats.new(coderetreats).not_started }
+    subject { CoderetreatLive::Presenters::Coderetreats.new(coderetreats).not_started }
     let(:not_started) { stub(not_started?: true) }
     let(:started) { stub(not_started?: false) }
     let(:coderetreats) { [not_started, started] }
@@ -12,7 +12,7 @@ describe "Presenting a list of coderetreats" do
   end
 
   describe "#just_started" do
-    subject { CoderetreatCoordinationApp::Presenters::Coderetreats.new(coderetreats).just_started }
+    subject { CoderetreatLive::Presenters::Coderetreats.new(coderetreats).just_started }
     let(:just_started) { stub(just_started?: true) }
     let(:not_just_started) { stub(just_started?: false) }
     let(:coderetreats) { [just_started, not_just_started] }
@@ -22,7 +22,7 @@ describe "Presenting a list of coderetreats" do
   end
 
   describe "#in_introduction" do
-    subject { CoderetreatCoordinationApp::Presenters::Coderetreats.new(coderetreats).in_introduction }
+    subject { CoderetreatLive::Presenters::Coderetreats.new(coderetreats).in_introduction }
     let(:in_introduction) { stub(in_introduction?: true) }
     let(:not_in_introduction) { stub(in_introduction?: false) }
     let(:coderetreats) { [in_introduction, not_in_introduction] }

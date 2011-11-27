@@ -1,4 +1,4 @@
-CoderetreatCoordinationApp::Application.routes.draw do
+CoderetreatLive::Application.routes.draw do
   resources :coderetreats, only: [] do
     collection do
       get :todays

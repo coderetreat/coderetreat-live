@@ -2,7 +2,7 @@ require 'coderetreat_states'
 require 'presenters/coderetreats'
 require 'token'
 class Coderetreat < ActiveRecord::Base
-  include CoderetreatCoordinationApp::CoderetreatStates
+  include CoderetreatLive::CoderetreatStates
 
   has_many :sessions
 
@@ -17,12 +17,12 @@ class Coderetreat < ActiveRecord::Base
   end
 
   def self.todays
-    CoderetreatCoordinationApp::Presenters::Coderetreats.new self.for_today
+    CoderetreatLive::Presenters::Coderetreats.new self.for_today
   end
 
 private
   def generate_token
-    self.admin_token = CoderetreatCoordinationApp::Token.new.to_s
+    self.admin_token = CoderetreatLive::Token.new.to_s
   end
 
 end

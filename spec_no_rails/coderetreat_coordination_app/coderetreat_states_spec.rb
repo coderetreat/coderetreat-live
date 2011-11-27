@@ -3,7 +3,7 @@ require 'coderetreat_states'
 
 class DummyCoderetreat
   attr_accessor :state
-  include CoderetreatCoordinationApp::CoderetreatStates
+  include CoderetreatLive::CoderetreatStates
 end
 
 describe "The states a coderetreat can be in" do

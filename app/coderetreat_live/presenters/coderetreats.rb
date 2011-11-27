@@ -1,4 +1,4 @@
-module CoderetreatCoordinationApp::Presenters
+module CoderetreatLive::Presenters
   class Coderetreats
     def initialize(retreats)
       @all = retreats

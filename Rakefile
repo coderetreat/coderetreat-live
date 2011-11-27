@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-CoderetreatCoordinationApp::Application.load_tasks
+CoderetreatLive::Application.load_tasks
