@@ -13,5 +13,9 @@ module CoderetreatCoordinationApp
         end
       end
     end
+
+    def just_started?
+      started?
+    end
   end
 end

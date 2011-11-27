@@ -9,6 +9,10 @@ Feature: Viewing the currently running coderetreats for the day
     When I view today's coderetreats
     Then I should see the coderetreat hasn't started yet
 
+  Scenario: Coderetreats that have started but nothing else show up as started
+    When I view today's coderetreats
+    Then I should see the coderetreat just started
+
   Scenario: Coderetreats can be shown as doing their intro
     Given the coderetreat is doing a its intro
     When I view today's coderetreats

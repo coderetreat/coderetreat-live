@@ -11,6 +11,16 @@ describe "Presenting a list of coderetreats" do
     end
   end
 
+  describe "#just_started" do
+    subject { CoderetreatCoordinationApp::Presenters::Coderetreats.new(coderetreats).just_started }
+    let(:just_started) { stub(just_started?: true) }
+    let(:not_just_started) { stub(just_started?: false) }
+    let(:coderetreats) { [just_started, not_just_started] }
+    it "only includes the coderetreats that have just started" do
+      subject.should =~ [just_started]
+    end
+  end
+
   describe "#in_introduction" do
     subject { CoderetreatCoordinationApp::Presenters::Coderetreats.new(coderetreats).in_introduction }
     let(:in_introduction) { stub(in_introduction?: true) }

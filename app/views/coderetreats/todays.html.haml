@@ -7,6 +7,13 @@
     -@coderetreats.not_started.each do |coderetreat|
       %li{id: dom_id(coderetreat)}=coderetreat.location
 
+%section.coderetreats.just_started
+  %header
+    %h2 Just Started
+  %ul
+    -@coderetreats.just_started.each do |coderetreat|
+      %li{id: dom_id(coderetreat)}=coderetreat.location
+
 
 %section.coderetreats.doing_introduction
   %header

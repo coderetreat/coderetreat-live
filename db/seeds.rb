@@ -11,6 +11,13 @@ Coderetreat.destroy_all
 end
 
 [
+  "Perth, Australia"
+].each do |location|
+  c = Coderetreat.create!(scheduled_for: Date.today, location: location)
+  c.start!
+end
+
+[
   "Tokyo, Japan"
 ].each do |location|
   c = Coderetreat.create!(scheduled_for: Date.today, location: location)

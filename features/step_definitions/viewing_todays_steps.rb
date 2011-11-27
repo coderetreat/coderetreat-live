@@ -16,3 +16,10 @@ Then /^I should see the coderetreat is during its intro$/ do
   end
 end
 
+Then /^I should see the coderetreat just started$/ do
+  coderetreat = coderetreats.first
+  within ".coderetreats.just_started" do
+    page.should have_css("#coderetreat_#{coderetreat.id}")
+  end
+end
+
