@@ -8,6 +8,9 @@ module CoderetreatCoordinationApp
         event :start do
           transition :not_started => :started
         end
+        event :do_introduction do
+          transition :started => :in_introduction
+        end
       end
     end
   end

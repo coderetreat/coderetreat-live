@@ -8,4 +8,10 @@
       %li{id: dom_id(coderetreat)}=coderetreat.location
 
 
+%section.coderetreats.doing_introduction
+  %header
+    %h2 Doing Intro
+  %ul
+    -@coderetreats.in_introduction.each do |coderetreat|
+      %li{id: dom_id(coderetreat)}=coderetreat.location
 

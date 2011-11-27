@@ -11,7 +11,6 @@ Given /^the coderetreat has not started$/ do
   coderetreats.first.not_started!
 end
 
-Given /^the coderetreat hasn't started a session$/ do
-  coderetreats.first.sessions.destroy_all
+Given /^the coderetreat is doing a its intro$/ do
+  coderetreats.first.do_introduction!
 end
-

@@ -30,5 +30,10 @@ describe "The states a coderetreat can be in" do
       subject.should be_not_started
       subject.should_not be_started
     end
+
+    it "can be put into in_introduction" do
+      subject.do_introduction!
+      subject.should be_in_introduction
+    end
   end
 end

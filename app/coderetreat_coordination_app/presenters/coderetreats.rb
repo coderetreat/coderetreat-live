@@ -3,8 +3,13 @@ module CoderetreatCoordinationApp::Presenters
     def initialize(retreats)
       @all = retreats
     end
+
     def not_started
       @all.select(&:not_started?)
+    end
+
+    def in_introduction
+      @all.select(&:in_introduction?)
     end
   end
 end
