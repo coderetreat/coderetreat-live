@@ -11,12 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111126224756) do
+ActiveRecord::Schema.define(:version => 20111127021149) do
 
   create_table "coderetreats", :force => true do |t|
     t.date     "scheduled_for"
     t.string   "state"
     t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sessions", :force => true do |t|
+    t.integer  "session_number"
+    t.integer  "coderetreat_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

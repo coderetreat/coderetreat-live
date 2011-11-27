@@ -3,6 +3,8 @@ require 'presenters/coderetreats'
 class Coderetreat < ActiveRecord::Base
   include CoderetreatCoordinationApp::CoderetreatStates
 
+  has_many :sessions
+
   def self.for_today
     where(scheduled_for: Date.today)
   end
