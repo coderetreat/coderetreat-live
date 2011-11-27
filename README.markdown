@@ -1,9 +1,9 @@
-# Coderetreat Coordination Application
+# Coderetreat Live
 
 ## What is it?
 This is an application to help facilitate coordination of multiple coderetreats on the same day. It is fun to have video calls, know what the other retreat is doing, share ideas, etc. So, since we programmers, let's build one.
 
-Check out progress at [http://app.coderetreat.org](http://app.coderetreat.org).
+Check out progress at [http://live.coderetreat.org](http://live.coderetreat.org).
 
 ## What features are there?
 So far, none. But, we're starting to work on some.
