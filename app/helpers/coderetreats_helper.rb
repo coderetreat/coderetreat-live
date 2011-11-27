@@ -10,6 +10,14 @@ module CoderetreatsHelper
     end
   end
 
-  def coderetreat_next_state_display(coderetreat)
+  def coderetreat_next_state(coderetreat)
+    case coderetreat.state_name
+    when :not_started
+      ["Start!", :start]
+    when :started
+      ["Do Introduction", :in_introduction]
+    when :in_introduction
+      ["Start Session", :start_session]
+    end
   end
 end
