@@ -3,5 +3,5 @@
   %h1 Coderetreat Event at #{@coderetreat.location}
 
 %section.status
-  =coderetreat_state_display @coderetreat
+  =@coderetreat.state_information.current_state_display.titleize
   =link_to next_state_info.first, coderetreat_path(@coderetreat.admin_token, :new_state => next_state_info.second), :method => :put
