@@ -17,5 +17,14 @@ module CoderetreatCoordinationApp
     def just_started?
       started?
     end
+
+    def change_state(new_state)
+      case new_state.downcase
+      when "start"
+        start!
+      when "in_introduction"
+        do_introduction!
+      end
+    end
   end
 end
