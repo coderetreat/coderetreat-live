@@ -6,6 +6,15 @@ class DummyCoderetreat
   include CoderetreatLive::CoderetreatStates
 end
 
+describe "getting state information" do
+  let(:coderetreat) { DummyCoderetreat.new }
+  context "not started" do
+    subject { coderetreat.state_information }
+    its(:current_state) { should == :not_started }
+    its(:current_state_display) { should == "not started" }
+  end
+end
+
 describe "The states a coderetreat can be in" do
   subject { DummyCoderetreat.new }
 
@@ -71,3 +80,4 @@ describe "The states a coderetreat can be in" do
     end
   end
 end
+

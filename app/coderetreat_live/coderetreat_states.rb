@@ -26,5 +26,10 @@ module CoderetreatLive
         do_introduction!
       end
     end
+
+    StateInformation = Struct.new :current_state, :current_state_display
+    def state_information
+      StateInformation.new self.state_name, self.human_state_name
+    end
   end
 end
