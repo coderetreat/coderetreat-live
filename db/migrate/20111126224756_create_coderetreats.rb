@@ -4,6 +4,7 @@ class CreateCoderetreats < ActiveRecord::Migration
       t.date :scheduled_for
       t.string :state
       t.string :location
+      t.string :admin_token
 
       t.timestamps
     end

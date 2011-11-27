@@ -15,4 +15,11 @@ describe Coderetreat do
       end
     end
   end
+
+  context "creating one" do
+    it "generates an admin token" do
+      coderetreat = Coderetreat.create! scheduled_for: Date.today
+      coderetreat.admin_token.should_not be_empty
+    end
+  end
 end

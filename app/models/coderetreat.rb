@@ -5,6 +5,8 @@ class Coderetreat < ActiveRecord::Base
 
   has_many :sessions
 
+  before_create :generate_token
+
   def self.for_today
     where(scheduled_for: Date.today)
   end
@@ -12,4 +14,10 @@ class Coderetreat < ActiveRecord::Base
   def self.todays
     CoderetreatCoordinationApp::Presenters::Coderetreats.new self.for_today
   end
+
+private
+  def generate_token
+    self.admin_token = CoderetreatCoordinationApp::Token.new.to_s
+  end
+
 end

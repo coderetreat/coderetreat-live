@@ -1,5 +1,5 @@
 CoderetreatCoordinationApp::Application.routes.draw do
-  resources :coderetreats, only: [] do
+  resources :coderetreats, only: [:edit] do
     collection do
       get :todays
     end
