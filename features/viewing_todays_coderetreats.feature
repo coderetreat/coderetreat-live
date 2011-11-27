@@ -14,7 +14,7 @@ Feature: Viewing the currently running coderetreats for the day
     Then I should see the coderetreat just started
 
   Scenario: Coderetreats can be shown as doing their intro
-    Given the coderetreat is doing a its intro
+    Given the coderetreat is doing its intro
     When I view today's coderetreats
     Then I should see the coderetreat is during its intro
 

@@ -11,6 +11,6 @@ Given /^the coderetreat has not started$/ do
   coderetreats.first.not_started!
 end
 
-Given /^the coderetreat is doing a its intro$/ do
+Given /^the coderetreat is doing its intro$/ do
   coderetreats.first.do_introduction!
 end
