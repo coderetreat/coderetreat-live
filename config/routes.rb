@@ -6,7 +6,7 @@ CoderetreatCoordinationApp::Application.routes.draw do
   end
 
   scope :module => :admin do
-    resources :coderetreats, only: [:edit]
+    resources :coderetreats, only: [:edit, :update]
   end
 
   root :to => "coderetreats#todays"

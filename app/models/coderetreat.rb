@@ -8,6 +8,10 @@ class Coderetreat < ActiveRecord::Base
 
   before_create :generate_token
 
+  def self.for_admin(token)
+    find_by_admin_token!(token)
+  end
+
   def self.for_today
     where(scheduled_for: Date.today)
   end

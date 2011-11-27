@@ -22,4 +22,16 @@ describe Coderetreat do
       coderetreat.admin_token.should_not be_empty
     end
   end
+
+  describe ".for_admin" do
+    it "returns for the admin token" do
+      coderetreat = Coderetreat.create! scheduled_for: Date.today
+      Coderetreat.for_admin(coderetreat.admin_token).should == coderetreat
+    end
+    it "raises a ActiveRecord::RecordNotFound if invalid" do
+      expect {
+      Coderetreat.for_admin("not there")
+      }.should raise_error(ActiveRecord::RecordNotFound)
+    end
+  end
 end
