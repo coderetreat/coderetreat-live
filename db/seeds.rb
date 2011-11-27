@@ -1,4 +1,12 @@
 Coderetreat.destroy_all
 
-5.times {|index| Coderetreat.create!(scheduled_for: Date.today, city: "Unstarted City #{index}", country: "Country #{index}") }
+[
+  "Chicago, IL",
+  "Pittsburgh, PA",
+  "Sydney, Australia",
+  "Honolulu, HI",
+  "Krakow, Poland"
+].each do |location|
+  Coderetreat.create!(scheduled_for: Date.today, location: location)
+end
 

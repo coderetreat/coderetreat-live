@@ -3,8 +3,7 @@ class CreateCoderetreats < ActiveRecord::Migration
     create_table :coderetreats do |t|
       t.date :scheduled_for
       t.string :state
-      t.string :city
-      t.string :country
+      t.string :location
 
       t.timestamps
     end

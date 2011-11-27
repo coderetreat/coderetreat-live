@@ -16,8 +16,7 @@ ActiveRecord::Schema.define(:version => 20111126224756) do
   create_table "coderetreats", :force => true do |t|
     t.date     "scheduled_for"
     t.string   "state"
-    t.string   "city"
-    t.string   "country"
+    t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
