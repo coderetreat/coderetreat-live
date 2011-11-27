@@ -1,0 +1,11 @@
+%h1 Today's Coderetreats
+
+%section.coderetreats.not_started
+  %header
+    %h2 Not Started
+  %ul
+    -@coderetreats.not_started do |coderetreat|
+      %li{id: dom_id(coderetreat)}
+
+
+

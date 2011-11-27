@@ -3,5 +3,8 @@ When /^I view today's coderetreats$/ do
 end
 
 Then /^I should see the coderetreat hasn't started yet$/ do
-  pending # express the regexp above with the code you wish you had
+  coderetreat = coderetreats.first
+  within ".coderetreats.not_started" do
+    page.should have_css("coderetreat_#{coderetreat.id}")
+  end
 end
