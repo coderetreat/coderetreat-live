@@ -9,6 +9,7 @@ Check out progress at [http://app.coderetreat.org](http://app.coderetreat.org).
 So far, none. But, we're starting to work on some.
 
 The initial set, targeting global day of coderetreat, revolve around a page that can be shared and shown to the world. This page would contain the following information.
+
 * What events are running, completed and coming up
 * What sessions are currently running
 * Information about the sessions running, such as number, starting time, approximate time left, current exercise/constraints, etc.
