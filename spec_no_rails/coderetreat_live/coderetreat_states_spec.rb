@@ -12,6 +12,8 @@ describe "getting state information" do
     subject { coderetreat.state_information }
     its(:current_state) { should == :not_started }
     its(:current_state_display) { should == "not started" }
+    its(:next_state) { should == :start }
+    its(:next_state_display) { should == "Start" }
   end
 end
 

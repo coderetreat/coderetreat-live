@@ -17,7 +17,7 @@ When /^I start the coderetreat$/ do
 end
 
 Then /^I should see the coderetreat is started$/ do
-  check_coderetreat_status "Just Started"
+  check_coderetreat_status "Started"
 end
 
 When /^I start the introduction$/ do

@@ -1,7 +1,7 @@
-- next_state_info = coderetreat_next_state(@coderetreat)
+- state_info = @coderetreat.state_information
 %header
   %h1 Coderetreat Event at #{@coderetreat.location}
 
 %section.status
-  =@coderetreat.state_information.current_state_display.titleize
-  =link_to next_state_info.first, coderetreat_path(@coderetreat.admin_token, :new_state => next_state_info.second), :method => :put
+  =state_info.current_state_display.titleize
+  =link_to state_info.next_state_display, coderetreat_path(@coderetreat.admin_token, :new_state => state_info.next_state), :method => :put

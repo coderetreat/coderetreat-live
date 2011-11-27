@@ -27,9 +27,19 @@ module CoderetreatLive
       end
     end
 
-    StateInformation = Struct.new :current_state, :current_state_display
+    StateInformation = Struct.new :current_state, :current_state_display,
+                                  :next_state, :next_state_display
     def state_information
-      StateInformation.new self.state_name, self.human_state_name
+      info = StateInformation.new self.state_name, self.human_state_name
+      info.next_state_display, info.next_state = case self.state_name
+      when :not_started
+        ["Start", :start]
+      when :started
+        ["Do Introduction", :in_introduction]
+      when :in_introduction
+        ["Start Session", :start_session]
+      end
+      info
     end
   end
 end
