@@ -21,10 +21,10 @@ Then /^I should see the coderetreat is started$/ do
 end
 
 When /^I start the introduction$/ do
-  pending # express the regexp above with the code you wish you had
+  click_link "Do Introduction"
 end
 
 Then /^I should see the coderetreat is in introduction$/ do
-  pending # express the regexp above with the code you wish you had
+  check_coderetreat_status "In Introduction"
 end
 
