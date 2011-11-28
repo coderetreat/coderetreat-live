@@ -1,6 +1,6 @@
 module CoderetreatLive
   module CoderetreatStates
-    def self.included(klass, *args)
+    def self.included(klass, *_)
       klass.state_machine :state, initial: :not_started do
         event :not_started do
           transition :started => :not_started
