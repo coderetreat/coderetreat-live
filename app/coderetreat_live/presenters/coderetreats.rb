@@ -5,32 +5,12 @@ module CoderetreatLive
         @all = retreats
       end
 
-      def not_started
-        @all.select(&:not_started?)
-      end
-
-      def just_started
-        @all.select(&:just_started?)
-      end
-
-      def in_introduction
-        @all.select(&:in_introduction?)
-      end
-
-      def in_session
-        @all.select(&:in_session?)
-      end
-
-      def on_break
-        @all.select(&:on_break?)
-      end
-
-      def in_closing_circle
-        @all.select(&:in_closing_circle?)
-      end
-
-      def finished
-        @all.select(&:finished?)
+      [:not_started, :just_started, :in_introduction,
+        :in_session, :on_break, :in_closing_circle,
+        :finished].each do |state|
+        define_method state do
+          @all.select(&"#{state}?".to_sym)
+        end
       end
     end
   end
