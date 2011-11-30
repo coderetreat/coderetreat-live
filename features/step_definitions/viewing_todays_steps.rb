@@ -3,21 +3,18 @@ When /^I view today's coderetreats$/ do
 end
 
 Then /^I should see the coderetreat hasn't started yet$/ do
-  coderetreat = coderetreats.first
   within ".coderetreats.not_started" do
     page.should have_css("#coderetreat_#{coderetreat.id}")
   end
 end
 
 Then /^I should see the coderetreat is during its intro$/ do
-  coderetreat = coderetreats.first
   within ".coderetreats.doing_introduction" do
     page.should have_css("#coderetreat_#{coderetreat.id}")
   end
 end
 
 Then /^I should see the coderetreat just started$/ do
-  coderetreat = coderetreats.first
   within ".coderetreats.just_started" do
     page.should have_css("#coderetreat_#{coderetreat.id}")
   end
