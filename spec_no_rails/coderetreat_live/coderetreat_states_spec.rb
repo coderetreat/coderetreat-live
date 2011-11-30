@@ -90,6 +90,20 @@ describe "The states a coderetreat can be in" do
       end
     end
 
+    context "transitioning to a new session" do
+      before do
+        subject.start!
+      end
+
+      it "increments the session number" do
+        subject.start_session!
+        old_session_number = subject.session_number
+        subject.finish_session!
+        subject.start_session!
+        subject.session_number.should == old_session_number + 1
+      end
+    end
+
     context "finishing a session" do
       before do
         subject.start!
