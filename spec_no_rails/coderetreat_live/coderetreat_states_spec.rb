@@ -50,6 +50,11 @@ describe "The states a coderetreat can be in" do
       subject.do_introduction!
       subject.should be_in_introduction
     end
+
+    it "can start a session" do
+      subject.start_session!
+      subject.should be_in_session
+    end
   end
 
   context "when do_introduction" do
@@ -60,6 +65,11 @@ describe "The states a coderetreat can be in" do
     it "is no longer just_started" do
       subject.should be_in_introduction
       subject.should_not be_just_started
+    end
+
+    it "can start a session" do
+      subject.start_session!
+      subject.should be_in_session
     end
   end
 

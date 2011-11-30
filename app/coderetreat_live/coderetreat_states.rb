@@ -11,6 +11,9 @@ module CoderetreatLive
         event :do_introduction do
           transition :started => :in_introduction
         end
+        event :start_session do
+          transition all => :in_session
+        end
       end
     end
 

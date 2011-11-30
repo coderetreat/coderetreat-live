@@ -14,3 +14,8 @@ end
 Given /^the coderetreat is doing its intro$/ do
   coderetreats.first.do_introduction!
 end
+
+Given /^the coderetreat is on session (\d+)$/ do |session_number, table|
+  coderetreat.start_session!
+end
+
