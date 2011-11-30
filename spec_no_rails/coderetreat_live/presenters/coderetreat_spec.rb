@@ -30,4 +30,14 @@ describe "Presenting a list of coderetreats" do
       subject.should =~ [in_introduction]
     end
   end
+
+  describe "#in_session" do
+    subject { CoderetreatLive::Presenters::Coderetreats.new(coderetreats).in_session }
+    let(:in_session) { stub(in_session?: true) }
+    let(:not_in_session) { stub(in_session?: false) }
+    let(:coderetreats) { [in_session, not_in_session] }
+    it "only includes the coderetreats that are in_session" do
+      subject.should =~ [in_session]
+    end
+  end
 end

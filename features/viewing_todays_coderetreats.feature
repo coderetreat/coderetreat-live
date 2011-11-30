@@ -20,11 +20,8 @@ Feature: Viewing the currently running coderetreats for the day
 
   Scenario: Coderetreats that are in the middle of a session show it
     Given the coderetreat is on session 1
-      | exercise |
-      | TDD as if you meant it |
     When I view today's coderetreats
-    Then I should see the coderetreat is running
-    And the coderetreat is on session 1
+    Then I should see the coderetreat is on session 1
 
   Scenario: Coderetreats that are on break show it
     Given the coderetreat finished session 1

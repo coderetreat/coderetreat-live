@@ -23,3 +23,10 @@ Then /^I should see the coderetreat just started$/ do
   end
 end
 
+Then /^I should see the coderetreat is on session (\d+)$/ do |arg1|
+  within ".coderetreats.in_session" do
+    page.should have_css("#coderetreat_#{coderetreat.id}")
+  end
+end
+
+
