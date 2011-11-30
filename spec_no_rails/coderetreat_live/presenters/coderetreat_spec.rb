@@ -26,7 +26,7 @@ describe "Presenting a list of coderetreats" do
     let(:in_introduction) { stub(in_introduction?: true) }
     let(:not_in_introduction) { stub(in_introduction?: false) }
     let(:coderetreats) { [in_introduction, not_in_introduction] }
-    it "only includes the coderetreats that are not_started" do
+    it "only includes the coderetreats that are in_introduction" do
       subject.should =~ [in_introduction]
     end
   end
