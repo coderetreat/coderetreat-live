@@ -4,15 +4,15 @@ Given /^there is a coderetreat scheduled today$/ do
 end
 
 Given /^the coderetreat has started$/ do
-  coderetreats.first.start!
+  coderetreat.start!
 end
 
 Given /^the coderetreat has not started$/ do
-  coderetreats.first.not_started!
+  coderetreat.not_started!
 end
 
 Given /^the coderetreat is doing its intro$/ do
-  coderetreats.first.do_introduction!
+  coderetreat.do_introduction!
 end
 
 Given /^the coderetreat is on session (\d+)$/ do |session_number|
