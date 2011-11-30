@@ -23,4 +23,13 @@ Given /^the coderetreat has finished the session$/ do
   coderetreat.finish_session!
 end
 
+Given /^the coderetreat is doing its closing circle$/ do
+  coderetreat.do_closing_circle!
+end
+
+Given /^the coderetreat has finished$/ do
+  pending
+end
+
+
 

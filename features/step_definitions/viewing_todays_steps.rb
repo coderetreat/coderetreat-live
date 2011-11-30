@@ -38,3 +38,13 @@ Then /^I should see the coderetreat is on a break after session (\d+)$/ do |sess
   end
 end
 
+Then /^I should see the coderetreat is on its closing circle$/ do
+  within ".coderetreats.doing_closing_circle" do
+    page.should have_css(coderetreat_selector)
+  end
+end
+
+Then /^I should see the coderetreat has finished$/ do
+  pending # express the regexp above with the code you wish you had
+end
+

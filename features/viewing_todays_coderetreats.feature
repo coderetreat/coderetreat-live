@@ -29,6 +29,10 @@ Feature: Viewing the currently running coderetreats for the day
     When I view today's coderetreats
     Then I should see the coderetreat is on a break after session 1
 
+  Scenario: Coderetreats that are doing their closing circle show it
+    Given the coderetreat is doing its closing circle
+    When I view today's coderetreats
+    Then I should see the coderetreat is on its closing circle
 
   Scenario: Coderetreats that have finished show up as finished
     Given the coderetreat has finished

@@ -107,5 +107,16 @@ describe "The states a coderetreat can be in" do
       end
     end
   end
+
+  context "doing the closing circle" do
+    before do
+      subject.start!
+    end
+
+    it "says it is in closing circle" do
+      subject.do_closing_circle!
+      subject.should be_in_closing_circle
+    end
+  end
 end
 
