@@ -24,6 +24,10 @@ module CoderetreatLive
       def on_break
         @all.select(&:on_break?)
       end
+
+      def in_closing_circle
+        @all.select(&:in_closing_circle?)
+      end
     end
   end
 end

@@ -50,4 +50,14 @@ describe "Presenting a list of coderetreats" do
       subject.should =~ [on_break]
     end
   end
+
+  describe "in_closing_circle" do
+    subject { CoderetreatLive::Presenters::Coderetreats.new(coderetreats).in_closing_circle }
+    let(:in_closing_circle) { stub(in_closing_circle?: true) }
+    let(:not_in_closing_circle) { stub(in_closing_circle?: false) }
+    let(:coderetreats) { [in_closing_circle, not_in_closing_circle] }
+    it "only includes the coderetreats that are in_closing_circle" do
+      subject.should =~ [in_closing_circle]
+    end
+  end
 end
