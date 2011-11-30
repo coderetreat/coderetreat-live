@@ -40,4 +40,14 @@ describe "Presenting a list of coderetreats" do
       subject.should =~ [in_session]
     end
   end
+
+  describe "#on_break" do
+    subject { CoderetreatLive::Presenters::Coderetreats.new(coderetreats).on_break }
+    let(:on_break) { stub(on_break?: true) }
+    let(:not_on_break) { stub(on_break?: false) }
+    let(:coderetreats) { [on_break, not_on_break] }
+    it "only includes the coderetreats that are on_break" do
+      subject.should =~ [on_break]
+    end
+  end
 end

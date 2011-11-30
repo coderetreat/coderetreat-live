@@ -14,6 +14,9 @@ module CoderetreatLive
         event :start_session do
           transition all => :in_session
         end
+        event :finish_session do
+          transition :in_session => :on_break
+        end
 
         before_transition any => :in_session, :do => :increment_session_number
       end

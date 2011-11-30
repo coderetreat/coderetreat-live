@@ -29,4 +29,12 @@ Then /^I should see the coderetreat is on session (\d+)$/ do |session_number|
   end
 end
 
+Then /^I should see the coderetreat is on a break after session (\d+)$/ do |session_number|
+  within ".coderetreats.on_break" do
+    page.should have_css(coderetreat_selector)
+    within coderetreat_selector do
+      page.should have_content("Session #{session_number}")
+    end
+  end
+end
 

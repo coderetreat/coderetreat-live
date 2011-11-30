@@ -20,6 +20,10 @@ module CoderetreatLive
       def in_session
         @all.select(&:in_session?)
       end
+
+      def on_break
+        @all.select(&:on_break?)
+      end
     end
   end
 end

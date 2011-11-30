@@ -89,6 +89,23 @@ describe "The states a coderetreat can be in" do
         subject.session_number.should == 1
       end
     end
+
+    context "finishing a session" do
+      before do
+        subject.start!
+        subject.start_session!
+      end
+      it "should be on a break" do
+        subject.finish_session!
+        subject.should be_on_break
+      end
+
+      it "should preserve the session number" do
+        session_number = subject.session_number
+        subject.finish_session!
+        subject.session_number.should == session_number
+      end
+    end
   end
 end
 

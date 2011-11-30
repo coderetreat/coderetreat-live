@@ -24,7 +24,8 @@ Feature: Viewing the currently running coderetreats for the day
     Then I should see the coderetreat is on session 1
 
   Scenario: Coderetreats that are on break show it
-    Given the coderetreat finished session 1
+    Given the coderetreat is on session 1
+    And the coderetreat has finished the session
     When I view today's coderetreats
     Then I should see the coderetreat is on a break after session 1
 

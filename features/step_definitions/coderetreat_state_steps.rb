@@ -19,3 +19,8 @@ Given /^the coderetreat is on session (\d+)$/ do |session_number|
   coderetreat.start_session!
 end
 
+Given /^the coderetreat has finished the session$/ do
+  coderetreat.finish_session!
+end
+
+
