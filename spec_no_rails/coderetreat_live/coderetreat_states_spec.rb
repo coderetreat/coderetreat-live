@@ -2,7 +2,7 @@ require 'state_machine'
 require 'coderetreat_states'
 
 class DummyCoderetreat
-  attr_accessor :state
+  attr_accessor :state, :session_number
   include CoderetreatLive::CoderetreatStates
 end
 
@@ -75,6 +75,19 @@ describe "The states a coderetreat can be in" do
     it "can start a session" do
       subject.start_session!
       subject.should be_in_session
+    end
+  end
+
+  context "working with sessions" do
+    context "starting the first session" do
+      before do
+        subject.start!
+      end
+
+      it "sets the session number to 1" do
+        subject.start_session!
+        subject.session_number.should == 1
+      end
     end
   end
 end

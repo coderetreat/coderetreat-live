@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20111127021149) do
     t.string   "state"
     t.string   "location"
     t.string   "admin_token"
+    t.integer  "session_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

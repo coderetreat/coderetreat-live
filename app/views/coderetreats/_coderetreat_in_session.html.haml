@@ -1,0 +1,6 @@
+- coderetreat = coderetreat_in_session
+%li{id: dom_id(coderetreat)}
+  =coderetreat.location
+  =link_to "(edit)", edit_coderetreat_path(coderetreat.admin_token)
+  %section.session_information
+    ==In Session #{coderetreat.session_number}

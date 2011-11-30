@@ -5,6 +5,7 @@ class CreateCoderetreats < ActiveRecord::Migration
       t.string :state
       t.string :location
       t.string :admin_token
+      t.integer :session_number
 
       t.timestamps
     end

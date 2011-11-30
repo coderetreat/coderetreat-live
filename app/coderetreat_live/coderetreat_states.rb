@@ -14,7 +14,13 @@ module CoderetreatLive
         event :start_session do
           transition all => :in_session
         end
+
+        before_transition any => :in_session, :do => :increment_session_number
       end
+    end
+
+    def increment_session_number
+      self.session_number = self.session_number.to_i + 1
     end
 
     def just_started?
