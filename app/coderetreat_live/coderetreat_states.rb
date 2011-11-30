@@ -3,13 +3,13 @@ module CoderetreatLive
     def self.included(klass, *_)
       klass.state_machine :state, initial: :not_started do
         event :not_started do
-          transition :started => :not_started
+          transition all => :not_started
         end
         event :start do
-          transition :not_started => :started
+          transition all => :started
         end
         event :do_introduction do
-          transition :started => :in_introduction
+          transition all => :in_introduction
         end
         event :start_session do
           transition all => :in_session

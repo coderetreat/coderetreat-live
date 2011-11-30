@@ -30,6 +30,11 @@ describe "The states a coderetreat can be in" do
       subject.should be_started
       subject.should_not be_not_started
     end
+
+    it "can go to introduction" do
+      subject.do_introduction!
+      subject.should be_in_introduction
+    end
   end
 
   context "when started" do
@@ -70,25 +75,6 @@ describe "The states a coderetreat can be in" do
     it "can start a session" do
       subject.start_session!
       subject.should be_in_session
-    end
-  end
-
-  context "changing states" do
-    context "valid state" do
-      it "changes the state" do
-        subject.change_state "start"
-        subject.should be_started
-        subject.change_state "in_introduction"
-        subject.should be_in_introduction
-      end
-    end
-
-    context "invalid state" do
-      it "raises an invalid transition error" do
-        expect {
-        subject.change_state "in_introduction"
-        }.to raise_error
-      end
     end
   end
 end
