@@ -118,5 +118,16 @@ describe "The states a coderetreat can be in" do
       subject.should be_in_closing_circle
     end
   end
+
+  context "finishing the day" do
+    before do
+      subject.start!
+    end
+
+    it "says the day has finished" do
+      subject.finish_day!
+      subject.should be_finished
+    end
+  end
 end
 

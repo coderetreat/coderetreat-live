@@ -60,4 +60,14 @@ describe "Presenting a list of coderetreats" do
       subject.should =~ [in_closing_circle]
     end
   end
+
+  describe "#finished" do
+    subject { CoderetreatLive::Presenters::Coderetreats.new(coderetreats).finished }
+    let(:finished) { stub(finished?: true) }
+    let(:not_finished) { stub(finished?: false) }
+    let(:coderetreats) { [finished, not_finished] }
+    it "only includes the coderetreats that are finished" do
+      subject.should =~ [finished]
+    end
+  end
 end

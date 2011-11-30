@@ -28,7 +28,7 @@ Given /^the coderetreat is doing its closing circle$/ do
 end
 
 Given /^the coderetreat has finished$/ do
-  pending
+  coderetreat.finish_day!
 end
 
 

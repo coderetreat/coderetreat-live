@@ -20,6 +20,9 @@ module CoderetreatLive
         event :do_closing_circle do
           transition all => :in_closing_circle
         end
+        event :finish_day do
+          transition all => :finished
+        end
 
         before_transition any => :in_session, :do => :increment_session_number
       end

@@ -28,6 +28,10 @@ module CoderetreatLive
       def in_closing_circle
         @all.select(&:in_closing_circle?)
       end
+
+      def finished
+        @all.select(&:finished?)
+      end
     end
   end
 end
