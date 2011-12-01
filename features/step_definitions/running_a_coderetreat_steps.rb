@@ -28,3 +28,23 @@ Then /^I should see the coderetreat is in introduction$/ do
   check_coderetreat_status "In Introduction"
 end
 
+When /^I start a session$/ do
+  click_link "Start Session"
+end
+
+Then /^I should see that the coderetreat is on session (\d+)$/ do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+When /^I end the session$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^I should see that the coderetreat is on break$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^I should see that the coderetreat is on a break$/ do
+  pending # express the regexp above with the code you wish you had
+end
+

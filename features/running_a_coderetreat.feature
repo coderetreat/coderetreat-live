@@ -13,6 +13,7 @@ Feature: Running a coderetreat
 
   Scenario: Starting and stopping a session
     Given the coderetreat is doing its intro
+    When I view the edit page for the coderetreat
     When I start a session
     Then I should see that the coderetreat is on session 1
     When I end the session
