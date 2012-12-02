@@ -1,7 +1,7 @@
 module CoderetreatLive
   module Coderetreats
     Coderetreat = Struct.new :status, :location
-    def self.todays
+    def self.running_today
     coderetreats = Object.new
     def coderetreats.not_started(&block)
       [
