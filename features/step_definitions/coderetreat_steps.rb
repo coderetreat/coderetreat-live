@@ -1,11 +1,15 @@
+def new_coderetreat(status, location)
+    CoderetreatLive::Coderetreats::Coderetreat.new(status, location)
+end
+
 Given /^I have no coderetreat running today$/ do
 end
 
 Given /^I have some coderetreats running today$/ do
   @coderetreats = [
-    CoderetreatLive::Coderetreats::Coderetreat.new("not_started", "Chicago"),
-    CoderetreatLive::Coderetreats::Coderetreat.new("not_started", "Seattle"),
-    CoderetreatLive::Coderetreats::Coderetreat.new("in_session", "Berlin")
+    new_coderetreat("not_started", "Chicago"),
+    new_coderetreat("not_started", "Seattle"),
+    new_coderetreat("in_session", "Berlin")
   ]
 end
 
