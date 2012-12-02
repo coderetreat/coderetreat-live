@@ -1,8 +1,9 @@
 def new_coderetreat(status, location)
-    CoderetreatLive::Coderetreats::Coderetreat.new(status, location)
+  ::Coderetreat.create status: status, location:location
 end
 
 Given /^I have no coderetreat running today$/ do
+  ::Coderetreat.destroy_all
 end
 
 Given /^I have some coderetreats running today$/ do
