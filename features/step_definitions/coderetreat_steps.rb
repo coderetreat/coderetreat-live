@@ -3,9 +3,9 @@ end
 
 Given /^I have some coderetreats running today$/ do
   @coderetreats = [
-    Coderetreat.new("not_started", "Chicago"),
-    Coderetreat.new("not_started", "Seattle"),
-    Coderetreat.new("in_session", "Berlin")
+    CoderetreatLive::Coderetreats::Coderetreat.new("not_started", "Chicago"),
+    CoderetreatLive::Coderetreats::Coderetreat.new("not_started", "Seattle"),
+    CoderetreatLive::Coderetreats::Coderetreat.new("in_session", "Berlin")
   ]
 end
 

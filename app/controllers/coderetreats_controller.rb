@@ -1,17 +1,6 @@
-Coderetreat = Struct.new :status, :location
+require 'coderetreats'
 class CoderetreatsController < ApplicationController
   def todays_running
-    @coderetreats = Object.new
-    def @coderetreats.not_started(&block)
-      [
-        Coderetreat.new("not_started", "Chicago"),
-        Coderetreat.new("not_started", "Seattle")
-      ].each(&block)
-    end
-    def @coderetreats.in_session(&block)
-      [
-        Coderetreat.new("in_session", "Berlin")
-      ].each(&block)
-    end
+    @coderetreats = CoderetreatLive::Coderetreats.todays
   end
 end
