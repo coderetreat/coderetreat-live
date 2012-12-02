@@ -1,6 +1,6 @@
 require 'coderetreats'
 class CoderetreatsController < ApplicationController
   def todays_running
-    @coderetreats = CoderetreatLive::Coderetreats.todays
+    @coderetreats = CoderetreatLive::Coderetreats.running_today
   end
 end
