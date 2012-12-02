@@ -14,7 +14,7 @@ When /^I go to todays running coderetreats display page$/ do
 end
 
 Then /^I should see that no coderetreats are running$/ do
-  page.should have_content("No coderetreats running today")
+  page.should have_content("There are no coderetreats running today")
 end
 
 Then /^I should see todays coderetreats grouped by their statuses$/ do
