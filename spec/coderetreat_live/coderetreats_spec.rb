@@ -37,4 +37,18 @@ describe "Coderetreat list" do
       end
     end
   end
+
+  describe "Looking up different lists of coderetreats" do
+    describe ".running_today" do
+      it "returns the list from the Coderetreat.running_today scope" do
+        scope_provider = stub
+        stub_const("Coderetreat", scope_provider)
+
+        scope_provider.stub(:running_today) { collection }
+
+        running_today = CoderetreatLive::Coderetreats.running_today
+        running_today.coderetreats.should be(collection)
+      end
+    end
+  end
 end
