@@ -21,14 +21,16 @@ module CoderetreatLive
       def empty?
         self.coderetreats.empty?
       end
-      def not_started
-        self.by_status :not_started
+
+      [:not_started,
+        :in_session].each do |status|
+        define_method status do
+          self.by_status status
+        end
       end
-      def in_session
-        self.by_status :in_session
-      end
+
       def by_status(status)
-        self.coderetreats.select{|coderetreat| coderetreat.status.to_sym == status}
+        self.coderetreats.select{|coderetreat| coderetreat.status.to_sym == status.to_sym}
       end
     end
     def self.for_collection(coderetreats)
