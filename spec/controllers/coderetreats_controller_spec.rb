@@ -25,7 +25,12 @@ describe CoderetreatsController do
     end
 
     context "no coderetreats running today" do
-      it "renders running_no_coderetreats"
+      it "renders running_no_coderetreats" do
+        coderetreats.stub(:empty? => true)
+
+        get :todays_running
+        response.should have_rendered("none_running")
+      end
     end
   end
 end
