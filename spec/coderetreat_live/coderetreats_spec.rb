@@ -25,5 +25,12 @@ describe "Coderetreat list" do
         coderetreats.not_started.should =~ [coderetreat1]
       end
     end
+    describe "#in_session" do
+      it "returns coderetreats that are in in_session status" do
+        coderetreat1.stub(:status => "not_started")
+        coderetreat2.stub(:status => "in_session")
+        coderetreats.in_session.should =~ [coderetreat2]
+      end
+    end
   end
 end

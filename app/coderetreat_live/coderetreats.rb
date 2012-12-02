@@ -24,6 +24,9 @@ module CoderetreatLive
       def not_started
         self.coderetreats.select{|coderetreat| coderetreat.status == "not_started"}
       end
+      def in_session
+        self.coderetreats.select{|coderetreat| coderetreat.status == "in_session"}
+      end
     end
     def self.for_collection(coderetreats)
       Collection.new(coderetreats)
