@@ -1,1 +1,15 @@
 %h2 There are no coderetreats running today
+
+%section.coderetreats.not_started
+  %header
+    %h2 Not Started
+  %ul
+    -@coderetreats.not_started do |coderetreat|
+      %li.coderetreat=coderetreat.location
+
+%section.coderetreats.in_session
+  %header
+    %h2 In Session
+  %ul
+    -@coderetreats.in_session do |coderetreat|
+      %li.coderetreat=coderetreat.location

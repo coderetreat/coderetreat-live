@@ -20,7 +20,7 @@ end
 Then /^I should see todays coderetreats grouped by their statuses$/ do
   @coderetreats.each do |coderetreat|
     within(".#{coderetreat.status}") do
-      page.should have_css(".coderetreats", text: coderetreat.location)
+      page.should have_css(".coderetreat", text: coderetreat.location)
     end
   end
 end
