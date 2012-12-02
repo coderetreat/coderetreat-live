@@ -21,6 +21,9 @@ module CoderetreatLive
       def empty?
         self.coderetreats.empty?
       end
+      def not_started
+        self.coderetreats.select{|coderetreat| coderetreat.status == "not_started"}
+      end
     end
     def self.for_collection(coderetreats)
       Collection.new(coderetreats)
