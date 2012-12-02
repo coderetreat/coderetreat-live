@@ -22,10 +22,13 @@ module CoderetreatLive
         self.coderetreats.empty?
       end
       def not_started
-        self.coderetreats.select{|coderetreat| coderetreat.status == "not_started"}
+        self.by_status :not_started
       end
       def in_session
-        self.coderetreats.select{|coderetreat| coderetreat.status == "in_session"}
+        self.by_status :in_session
+      end
+      def by_status(status)
+        self.coderetreats.select{|coderetreat| coderetreat.status.to_sym == status}
       end
     end
     def self.for_collection(coderetreats)
