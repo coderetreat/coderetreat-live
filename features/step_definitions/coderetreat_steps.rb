@@ -11,11 +11,10 @@ Given /^I have no coderetreat running today$/ do
 end
 
 Given /^I have some coderetreats running today$/ do
-  @coderetreats = [
-    new_coderetreat("not_started", "Chicago"),
-    new_coderetreat("not_started", "Seattle"),
-    new_coderetreat("in_session", "Berlin")
-  ]
+  @coderetreats = []
+  10.times do |index|
+    @coderetreats << new_coderetreat(CoderetreatLive::Coderetreats::StateMachine::STATES.sample, "City #{index}")
+  end
 end
 
 Given /^I have a running coderetreat$/ do
