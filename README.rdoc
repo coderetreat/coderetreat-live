@@ -18,3 +18,5 @@ The initial set, targeting global day of coderetreat, revolve around a page that
 
 We are eager to add more features as ideas come up.
 
+## Caveat
+This is currently in an evolving design as the base functionality gets added. It is definitely in flux right now, but you can start to see the shape of it coming out.
