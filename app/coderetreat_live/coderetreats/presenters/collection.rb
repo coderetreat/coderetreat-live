@@ -1,4 +1,4 @@
-require 'coderetreats/states'
+require 'coderetreats/state_machine'
 module CoderetreatLive
   module Coderetreats
     module Presenters
@@ -13,7 +13,7 @@ module CoderetreatLive
           self.coderetreats.empty?
         end
 
-        CoderetreatLive::Coderetreats::STATES.each do |status|
+        CoderetreatLive::Coderetreats::StateMachine::STATES.each do |status|
           define_method status do |&block|
             self.by_status status, &block
           end
