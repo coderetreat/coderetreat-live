@@ -16,9 +16,9 @@ module CoderetreatLive
           :in_session,
           :finished].each do |status|
           define_method status do |&block|
-          self.by_status status, &block
+            self.by_status status, &block
           end
-          end
+        end
 
         def by_status(status, &block)
           self.coderetreats.select{|coderetreat| coderetreat.status.to_sym == status.to_sym}.each(&block)

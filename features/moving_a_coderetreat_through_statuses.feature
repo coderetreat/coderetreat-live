@@ -8,21 +8,25 @@ Feature: Moving a coderetreat through its statuses
     When I go to todays running coderetreats display page
     Then I should see the coderetreat is in the status "Not Started"
 
+    @wip
   Scenario: Starting a session
     When I update the status to "In Session"
     And I go to todays running coderetreats display page
     Then I should see the coderetreat is in the status "In Session"
 
+    @wip
   Scenario: Going to lunch
     When I update the status to "At Lunch"
     And I go to todays running coderetreats display page
     Then I should see the coderetreat is in the status "At Lunch"
 
+    @wip
   Scenario: Ending the coderetreat
     When I update the status to "Finished"
     And I go to todays running coderetreats display page
     Then I should see the coderetreat is in the status "Finished"
 
+    @wip
   Scenario: Moving through a couple statuses
     When I update the status to "In Session"
     And I go to todays running coderetreats display page
@@ -35,9 +39,3 @@ Feature: Moving a coderetreat through its statuses
     And I update the status to "Finished"
     And I go to todays running coderetreats display page
     Then I should see the coderetreat is in the status "Finished"
-
-
-
-
-
-

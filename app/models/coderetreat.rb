@@ -4,8 +4,13 @@ class Coderetreat < ActiveRecord::Base
   HasTokens.on self
   has_tokens admin: 10
   before_create :generate_tokens
+  before_create :set_default_attribute_values
 
   def self.running_today
     self.where(:date => DateTime.now.to_date)
+  end
+
+  def set_default_attribute_values
+    self.status ||= "not_started"
   end
 end
