@@ -1,3 +1,4 @@
+require 'has_tokens'
 class Coderetreat < ActiveRecord::Base
   attr_accessible :location, :status, :date
 
@@ -11,6 +12,6 @@ class Coderetreat < ActiveRecord::Base
   end
 
   def set_default_attribute_values
-    self.status ||= "not_started"
+    self.status ||= CoderetreatLive::Coderetreats::StateMachine.default_state_string
   end
 end
