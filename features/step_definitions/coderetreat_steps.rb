@@ -1,5 +1,5 @@
-def new_coderetreat(status, location)
-  ::Coderetreat.create status: status, location:location
+def new_coderetreat(status, location, date = DateTime.now.to_date)
+  ::Coderetreat.create status: status, location:location, date: date
 end
 
 Given /^I have no coderetreat running today$/ do

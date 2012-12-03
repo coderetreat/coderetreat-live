@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20121202230924) do
   create_table "coderetreats", :force => true do |t|
     t.string   "status"
     t.string   "location"
+    t.date     "date"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -1,7 +1,7 @@
 class Coderetreat < ActiveRecord::Base
-  attr_accessible :location, :status
+  attr_accessible :location, :status, :date
 
   def self.running_today
-    self.all
+    self.where(:date => DateTime.now.to_date)
   end
 end
