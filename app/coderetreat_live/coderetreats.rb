@@ -1,4 +1,4 @@
-require 'coderetreat_live/coderetreats/presenters/collection'
+require 'coderetreats/presenters/collection'
 
 module CoderetreatLive
   module Coderetreats
