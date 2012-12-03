@@ -1,2 +1,0 @@
-module Admin::CoderetreatsHelper
-end
