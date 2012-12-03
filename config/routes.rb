@@ -1,6 +1,6 @@
 CoderetreatLive::Application.routes.draw do
   resources :coderetreats, only: [] do
-    get :todays_running, :on => :collection
+    get :running_today, :on => :collection
   end
 
   resources :coderetreats, module: "admin", only: [] do

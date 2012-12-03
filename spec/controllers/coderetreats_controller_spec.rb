@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe CoderetreatsController do
-  describe "GET /todays_running" do
+  describe "GET /running_today" do
     let(:coderetreats_lookup) { stub }
     let(:coderetreats) { stub(:empty? => true) }
 
@@ -10,8 +10,8 @@ describe CoderetreatsController do
       coderetreats_lookup.stub(:running_today) { coderetreats }
     end
 
-    it "assigns the todays_running coderetreats to coderetreats" do
-      get :todays_running
+    it "assigns the running_today coderetreats to coderetreats" do
+      get :running_today
       assigns[:coderetreats].should == coderetreats
     end
 
@@ -19,7 +19,7 @@ describe CoderetreatsController do
       it "renders running" do
         coderetreats.stub(:empty? => false)
 
-        get :todays_running
+        get :running_today
         response.should have_rendered("running")
       end
     end
@@ -28,7 +28,7 @@ describe CoderetreatsController do
       it "renders running_no_coderetreats" do
         coderetreats.stub(:empty? => true)
 
-        get :todays_running
+        get :running_today
         response.should have_rendered("none_running")
       end
     end

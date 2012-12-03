@@ -26,7 +26,7 @@ When /^I go to manage the coderetreat$/ do
 end
 
 When /^I go to todays running coderetreats display page$/ do
-  visit todays_running_coderetreats_url
+  visit running_today_coderetreats_url
 end
 
 Then /^I should see that no coderetreats are running$/ do
