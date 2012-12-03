@@ -10,7 +10,13 @@ module CoderetreatLive
     end
 
     module Presenters
-      Collection = Struct.new(:coderetreats) do
+      class Collection
+        attr_accessor :coderetreats
+
+        def initialize(coderetreats)
+          @coderetreats = coderetreats
+        end
+
         def empty?
           self.coderetreats.empty?
         end
