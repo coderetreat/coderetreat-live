@@ -13,7 +13,8 @@ module CoderetreatLive
         end
 
         [:not_started,
-          :in_session].each do |status|
+          :in_session,
+          :finished].each do |status|
           define_method status do |&block|
           self.by_status status, &block
           end
