@@ -159,6 +159,7 @@ DEPENDENCIES
   haml
   jquery-rails
   rails (= 3.2.9)
+  rake
   rspec-rails
   sass
   sass-rails (~> 3.2.3)

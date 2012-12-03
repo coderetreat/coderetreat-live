@@ -1,3 +1,4 @@
+[![Build Status](https://secure.travis-ci.org/coreyhaines/coderetreat-live.png?branch=master)](https://travis-ci.org/coreyhaines/coderetreat-live)
 # Coderetreat Live
 
 Check out [http://globalday.coderetreat.org/](global day of coderetreat).

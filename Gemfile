@@ -16,6 +16,7 @@ group :assets do
 end
 
 group :test do
+  gem 'rake'
   gem 'database_cleaner', require: false
   gem 'rspec-rails', require: false
   gem 'cucumber-rails', require: false
