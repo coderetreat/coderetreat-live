@@ -1,3 +1,17 @@
+%section.coderetreats.in_session
+  %header
+    %h2 In Session
+  %ul
+    -@coderetreats.in_session do |coderetreat|
+      %li.coderetreat=coderetreat.location
+
+%section.coderetreats.finished
+  %header
+    %h2 Finished
+  %ul
+    -@coderetreats.finished do |coderetreat|
+      %li.coderetreat=coderetreat.location
+
 %section.coderetreats.not_started
   %header
     %h2 Not Started
@@ -5,9 +19,3 @@
     -@coderetreats.not_started do |coderetreat|
       %li.coderetreat=coderetreat.location
 
-%section.coderetreats.in_session
-  %header
-    %h2 In Session
-  %ul
-    -@coderetreats.in_session do |coderetreat|
-      %li.coderetreat=coderetreat.location
