@@ -1,4 +1,3 @@
-@wip
 Feature: Moving a coderetreat through its statuses
 
   Background:
