@@ -1,3 +1,4 @@
+require 'coderetreats/states'
 module CoderetreatLive
   module Coderetreats
     module Presenters
@@ -12,9 +13,7 @@ module CoderetreatLive
           self.coderetreats.empty?
         end
 
-        [:not_started,
-          :in_session,
-          :finished].each do |status|
+        CoderetreatLive::Coderetreats::STATES.each do |status|
           define_method status do |&block|
             self.by_status status, &block
           end
