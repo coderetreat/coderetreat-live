@@ -6,6 +6,6 @@ env:
 script:
   - bundle exec rake db:migrate
   - bundle exec rake db:test:prepare
-  - bundle exec rake
+  - bundle exec rake spec cucumber
 
 
