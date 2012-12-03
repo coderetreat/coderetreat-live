@@ -11,14 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202230924) do
+ActiveRecord::Schema.define(:version => 20121203162943) do
 
   create_table "coderetreats", :force => true do |t|
     t.string   "status"
     t.string   "location"
     t.date     "date"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "admin_token"
   end
+
+  add_index "coderetreats", ["admin_token"], :name => "index_coderetreats_on_admin_token"
 
 end

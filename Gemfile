@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem 'sass'
 gem 'haml'
 
+gem 'has_tokens'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

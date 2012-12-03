@@ -65,6 +65,7 @@ GEM
     gherkin (2.11.5)
       json (>= 1.4.6)
     haml (3.1.7)
+    has_tokens (1.0.1)
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -157,6 +158,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   haml
+  has_tokens
   jquery-rails
   rails (= 3.2.9)
   rake
