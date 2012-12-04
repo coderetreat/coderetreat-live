@@ -14,7 +14,6 @@ Feature: Moving a coderetreat through its statuses
     And I go to todays running coderetreats display page
     Then I should see the coderetreat is in the status "In Session"
 
-    @wip
   Scenario: Going to lunch
     When I update the status to "At Lunch"
     And I go to todays running coderetreats display page

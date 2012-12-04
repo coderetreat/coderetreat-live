@@ -24,6 +24,9 @@ end
 When /^I go to manage the coderetreat$/ do
   visit manage_coderetreat_url(id: @coderetreat.admin_token)
 end
+When /^I update the status to "(.*?)"$/ do |status|
+  click_link status
+end
 
 When /^I go to todays running coderetreats display page$/ do
   visit running_today_coderetreats_url
