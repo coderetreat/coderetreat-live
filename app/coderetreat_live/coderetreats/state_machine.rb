@@ -12,7 +12,7 @@ module CoderetreatLive
       end
 
       def self.in_session_status
-        :in_session
+        IN_SESSION_STATE
       end
 
       def self.in_session_status?(status)
