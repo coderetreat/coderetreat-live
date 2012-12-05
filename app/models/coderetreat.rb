@@ -26,6 +26,13 @@ class Coderetreat < ActiveRecord::Base
     CoderetreatLive::Coderetreats::StateMachine.in_session_status?(self.status)
   end
 
+  def current_session_constraints
+    current_session.constraints
+  end
+  def current_session
+    self.sessions.order("created_at DESC").first
+  end
+
   def set_default_attribute_values
     self.status ||= CoderetreatLive::Coderetreats::StateMachine.default_state_string
   end

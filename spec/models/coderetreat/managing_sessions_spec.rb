@@ -28,4 +28,14 @@ describe "Managing sessions" do
       coderetreat.should be_in_session
     end
   end
+
+  describe "#current_session_constraints" do
+    it "returns the constraints for the most recently started session" do
+      coderetreat = Coderetreat.create
+      coderetreat.start_new_session "constraints" => "no loops"
+      coderetreat.start_new_session "constraints" => "no ifs"
+
+      coderetreat.current_session_constraints.should == "no ifs"
+    end
+  end
 end
