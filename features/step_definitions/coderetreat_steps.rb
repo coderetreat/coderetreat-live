@@ -45,8 +45,6 @@ Then /^I should see todays coderetreats grouped by their statuses$/ do
 end
 
 Then /^I should see the coderetreat is in the status "(.*?)"$/ do |status|
-  within(".#{status.gsub(" ","").underscore}") do
-    page.should have_css(".coderetreat", text: @coderetreat.location)
-  end
+  page.should have_css(".status", text: @coderetreat.status)
 end
 
