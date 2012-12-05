@@ -2,8 +2,24 @@
   %h2
     Current Status:
     %span.coderetreat_status=human_view_coderetreat_status(@coderetreat)
-%section.status_update_actions
+
+%section.actions.status_update
+  %header
+    %h3 Update Status Of Coderetreat
   %ul
     %li=link_to "Not Started", update_status_coderetreat_path(id: @coderetreat.admin_token, :status => "not_started"), :method => :put
+    %li=link_to "On Break", update_status_coderetreat_path(id: @coderetreat.admin_token, :status => "on_break"), :method => :put
     %li=link_to "At Lunch", update_status_coderetreat_path(id: @coderetreat.admin_token, :status => "at_lunch"), :method => :put
     %li=link_to "Finished", update_status_coderetreat_path(id: @coderetreat.admin_token, :status => "finished"), :method => :put
+
+%section.sessions
+  %header
+    %h2 Sessions Today
+
+  %section.create_new
+    %h3
+      Start A New Session
+
+  %section.previous_sessions
+    %h3
+      Previous Sessions
