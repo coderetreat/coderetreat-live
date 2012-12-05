@@ -7,24 +7,8 @@
         =coderetreat.location
 
 -CoderetreatLive::Coderetreats::StateMachine::RUNNING_NON_SESSION_STATES.each do |state|
-  %section.coderetreats{class: state}
-    %header
-      %h2=human_view_coderetreat_status(state)
-    %ul
-      -@coderetreats.by_status(state) do |coderetreat|
-        %li.coderetreat=coderetreat.location
+  =render partial: "state_listing", locals: {state: state}
 
-%section.coderetreats.finished
-  %header
-    %h2 Finished
-  %ul
-    -@coderetreats.finished do |coderetreat|
-      %li.coderetreat=coderetreat.location
-
-%section.coderetreats.not_started
-  %header
-    %h2 Not Started
-  %ul
-    -@coderetreats.not_started do |coderetreat|
-      %li.coderetreat=coderetreat.location
+-CoderetreatLive::Coderetreats::StateMachine::NOT_RUNNING_STATES.each do |state|
+  =render partial: "state_listing", locals: {state: state}
 
