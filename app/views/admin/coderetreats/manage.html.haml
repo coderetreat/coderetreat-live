@@ -1,6 +1,7 @@
-%h2
-  Current Status:
-  %span.status=@coderetreat.status
+%header
+  %h2
+    Current Status:
+    %span.coderetreat_status=human_view_coderetreat_status(@coderetreat)
 %section.status_changes
   %ul
     %li=link_to "At Lunch", update_status_coderetreat_path(id: @coderetreat.admin_token, :status => "at_lunch"), :method => :put

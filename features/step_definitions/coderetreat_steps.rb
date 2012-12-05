@@ -45,6 +45,6 @@ Then /^I should see todays coderetreats grouped by their statuses$/ do
 end
 
 Then /^I should see the coderetreat is in the status "(.*?)"$/ do |status|
-  page.should have_css(".status", text: @coderetreat.status)
+  page.should have_css(".coderetreat_status", text: status)
 end
 
