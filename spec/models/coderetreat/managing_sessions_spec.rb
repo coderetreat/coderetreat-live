@@ -9,5 +9,11 @@ describe "Managing sessions" do
       coderetreat = Coderetreat.create
       expect {coderetreat.start_new_session({"constraints" => "no ifs"})}.to change(coderetreat.sessions, :count).by(1)
     end
+
+    it "initializes the session with the constraint passed in" do
+      coderetreat = Coderetreat.create
+      session = coderetreat.start_new_session({"constraints" => "no ifs"})
+      session.constraints.should == "no ifs"
+    end
   end
 end

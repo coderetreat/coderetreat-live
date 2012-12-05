@@ -18,6 +18,10 @@ class Coderetreat < ActiveRecord::Base
     self
   end
 
+  def start_new_session(session_params)
+    sessions.create session_params
+  end
+
   def set_default_attribute_values
     self.status ||= CoderetreatLive::Coderetreats::StateMachine.default_state_string
   end

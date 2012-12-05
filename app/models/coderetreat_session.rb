@@ -1,3 +1,3 @@
 class CoderetreatSession < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :constraints
 end

@@ -9,7 +9,7 @@ describe Admin::CoderetreatSessionsController do
     end
     it "adds a session to the coderetreat" do
       session_manager.should_receive(:start_new_session_for).with("token", {"constraint" => "my constraint"})
-      post :create, coderetreat_id: "token", session: {constraint: "my constraint"}
+      post :create, coderetreat_id: "token", coderetreat_session: {constraint: "my constraint"}
     end
   end
 end
