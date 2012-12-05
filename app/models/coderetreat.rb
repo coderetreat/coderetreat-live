@@ -7,7 +7,7 @@ class Coderetreat < ActiveRecord::Base
   before_create :generate_tokens
   before_create :set_default_attribute_values
 
-  has_many :sessions, class_name: "CoderetreatSession", order: "created_at DESC"
+  has_many :sessions, class_name: "CoderetreatSession", order: "created_at DESC", :dependent => :destroy
 
   def self.running_today
     self.where(:date => DateTime.now.to_date)
