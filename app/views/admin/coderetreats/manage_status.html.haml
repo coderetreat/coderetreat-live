@@ -1,7 +1,7 @@
 %header
   %h2
     Current Status:
-    %span.coderetreat_status=human_view_coderetreat_status(@coderetreat)
+    %span.coderetreat_status=human_view_coderetreat_status(@coderetreat.status)
 -if @coderetreat.in_session?
   %section.current_session_info
     .constraints=@coderetreat.current_session_constraints

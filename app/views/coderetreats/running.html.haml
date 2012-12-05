@@ -6,19 +6,13 @@
       %li.coderetreat
         =coderetreat.location
 
-%section.coderetreats.at_lunch
-  %header
-    %h2 At Lunch
-  %ul
-    -@coderetreats.at_lunch do |coderetreat|
-      %li.coderetreat=coderetreat.location
-
-%section.coderetreats.on_break
-  %header
-    %h2 On Break
-  %ul
-    -@coderetreats.on_break do |coderetreat|
-      %li.coderetreat=coderetreat.location
+-CoderetreatLive::Coderetreats::StateMachine::RUNNING_NON_SESSION_STATES.each do |state|
+  %section.coderetreats{class: state}
+    %header
+      %h2=human_view_coderetreat_status(state)
+    %ul
+      -@coderetreats.by_status(state) do |coderetreat|
+        %li.coderetreat=coderetreat.location
 
 %section.coderetreats.finished
   %header
