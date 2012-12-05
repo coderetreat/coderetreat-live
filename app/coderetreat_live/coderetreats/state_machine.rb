@@ -15,6 +15,10 @@ module CoderetreatLive
         IN_SESSION_STATE
       end
 
+      def self.in_session_status_string
+        IN_SESSION_STATE.to_s
+      end
+
       def self.in_session_status?(status)
         status.to_s == self.in_session_status.to_s
       end
