@@ -1,3 +1,4 @@
+@wip
 Feature: Managing sessions for a running coderetreat
 
   Background:
