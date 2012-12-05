@@ -79,7 +79,7 @@ describe "Coderetreat list" do
       end
 
       it "returns the coderetreat updated" do
-        CoderetreatLive::Coderetreats.update_status("token", "finished").should == coderetreat
+        CoderetreatLive::Coderetreats.update_status("token", "in_session").should == coderetreat
       end
     end
   end
