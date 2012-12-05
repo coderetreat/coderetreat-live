@@ -70,7 +70,7 @@ describe "Coderetreat list" do
 
     describe "updating the status of a coderetreat" do
       before do
-        coderetreat.stub(:update_status_to)
+        coderetreat.stub(:update_status_to) { coderetreat }
       end
       it "updates the status attribute to the value passed in" do
         coderetreat.should_receive(:update_status_to).with("finished")

@@ -13,6 +13,7 @@ class Coderetreat < ActiveRecord::Base
 
   def update_status_to(new_status)
     self.update_attribute :status, new_status
+    self
   end
 
   def set_default_attribute_values
