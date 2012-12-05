@@ -22,6 +22,10 @@ class Coderetreat < ActiveRecord::Base
     sessions.create session_params
   end
 
+  def in_session?
+    CoderetreatLive::Coderetreats::StateMachine.in_session_status?(self.status)
+  end
+
   def set_default_attribute_values
     self.status ||= CoderetreatLive::Coderetreats::StateMachine.default_state_string
   end

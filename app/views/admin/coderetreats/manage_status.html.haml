@@ -2,7 +2,9 @@
   %h2
     Current Status:
     %span.coderetreat_status=human_view_coderetreat_status(@coderetreat)
-  .current_session_info
+-if @coderetreat.in_session?
+  %section.current_session_info
+    .constraints=@coderetreat.current_session_constraints
 
 %section.actions.status_update
   %header
