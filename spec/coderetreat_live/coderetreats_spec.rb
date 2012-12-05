@@ -65,4 +65,18 @@ describe "Coderetreat list" do
       end
     end
   end
+
+  describe "updating the status of a coderetreat" do
+    it "updates the status attribute to the value passed in" do
+      scope_provider = stub
+      stub_const("Coderetreat", scope_provider)
+
+      coderetreat = stub
+      scope_provider.stub(:for_admin).with("token") { coderetreat }
+
+      coderetreat.should_receive(:update_status_to).with("finished")
+
+      CoderetreatLive::Coderetreats.update_status("token", "finished")
+    end
+  end
 end

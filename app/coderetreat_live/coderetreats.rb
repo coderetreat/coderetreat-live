@@ -13,5 +13,10 @@ module CoderetreatLive
     def self.for_admin_token(token)
       ::Coderetreat.for_admin(token)
     end
+
+    def self.update_status(token, new_status)
+      cr = for_admin_token(token)
+      cr.update_status_to "finished"
+    end
   end
 end
