@@ -7,7 +7,7 @@ class Coderetreat < ActiveRecord::Base
   before_create :generate_tokens
   before_create :set_default_attribute_values
 
-  has_many :sessions, class_name: "CoderetreatSession"
+  has_many :sessions, class_name: "CoderetreatSession", order: "created_at DESC"
 
   def self.running_today
     self.where(:date => DateTime.now.to_date)
@@ -30,7 +30,7 @@ class Coderetreat < ActiveRecord::Base
     current_session.constraints
   end
   def current_session
-    self.sessions.order("created_at DESC").first
+    self.sessions.first
   end
 
   def set_default_attribute_values
