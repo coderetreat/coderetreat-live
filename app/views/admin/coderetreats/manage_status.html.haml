@@ -2,6 +2,7 @@
   %h2
     Current Status:
     %span.coderetreat_status=human_view_coderetreat_status(@coderetreat)
+  .current_session_info
 
 %section.actions.status_update
   %header
@@ -19,9 +20,10 @@
   %section.create_new
     %h3
       Start A New Session
-      =form_for CoderetreatSession.new, url: new_coderetreat_session_path(coderetreat_id: @coderetreat.admin_token) do |f|
-        =f.text_area :constraints
-        =f.submit "Start new session"
+    =form_for CoderetreatSession.new, url: coderetreat_sessions_path(coderetreat_id: @coderetreat.admin_token) do |f|
+      =f.label :constraints
+      =f.text_area :constraints
+      =f.submit "Start new session"
 
   %section.previous_sessions
     %h3
