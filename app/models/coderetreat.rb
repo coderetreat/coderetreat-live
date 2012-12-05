@@ -11,6 +11,10 @@ class Coderetreat < ActiveRecord::Base
     self.where(:date => DateTime.now.to_date)
   end
 
+  def update_status_to(new_status)
+    self.update_attribute :status, new_status
+  end
+
   def set_default_attribute_values
     self.status ||= CoderetreatLive::Coderetreats::StateMachine.default_state_string
   end
