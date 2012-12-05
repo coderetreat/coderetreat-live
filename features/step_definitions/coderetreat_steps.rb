@@ -22,8 +22,9 @@ Given /^I have a running coderetreat$/ do
 end
 
 When /^I go to manage the coderetreat$/ do
-  visit manage_coderetreat_url(id: @coderetreat.admin_token)
+  visit manage_status_coderetreat_url(id: @coderetreat.admin_token)
 end
+
 When /^I update the status to "(.*?)"$/ do |status|
   click_link status
 end
