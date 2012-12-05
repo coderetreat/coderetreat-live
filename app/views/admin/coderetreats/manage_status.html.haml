@@ -2,9 +2,6 @@
   %h2
     Current Status:
     %span.coderetreat_status=human_view_coderetreat_status(@coderetreat.status)
--if @coderetreat.in_session?
-  %section.current_session_info
-    .constraints=@coderetreat.current_session_constraints
 
 %section.actions.status_update
   %header
@@ -14,6 +11,17 @@
     %li=link_to "On Break", update_status_coderetreat_path(id: @coderetreat.admin_token, :status => "on_break"), :method => :put
     %li=link_to "At Lunch", update_status_coderetreat_path(id: @coderetreat.admin_token, :status => "at_lunch"), :method => :put
     %li=link_to "Finished", update_status_coderetreat_path(id: @coderetreat.admin_token, :status => "finished"), :method => :put
+
+-if @coderetreat.in_session?
+  %section.current_session.session_info
+    %header
+      %h3 Current Session Information
+    %p.started_at
+      Started Around:
+      =@coderetreat.current_session.created_at.to_time.strftime("%H:%m %p")
+    %p.constraints
+      Constraints:
+      =@coderetreat.current_session.constraints
 
 %section.sessions
   %header
@@ -31,7 +39,7 @@
     %h3
       Previous Sessions
     -@coderetreat.sessions.each do |session|
-      %section.session
+      %section.session_info
         %p.started_at
           Started Around:
           =session.created_at.to_time.strftime("%H:%m %p")

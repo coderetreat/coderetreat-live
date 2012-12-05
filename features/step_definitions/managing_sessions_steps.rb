@@ -5,7 +5,7 @@ When /^I start a new session$/ do |table|
 end
 
 Then /^I should see the current session's constraint is "(.*?)"$/ do |constraint|
-  within(".current_session_info") do
+  within(".current_session.session_info") do
     page.should have_text(constraint)
   end
 end
