@@ -19,6 +19,9 @@
   %section.create_new
     %h3
       Start A New Session
+      =form_for CoderetreatSession.new, url: new_coderetreat_session_path(coderetreat_id: @coderetreat.admin_token) do |f|
+        =f.text_area :constraints
+        =f.submit "Start new session"
 
   %section.previous_sessions
     %h3

@@ -6,5 +6,6 @@ CoderetreatLive::Application.routes.draw do
   resources :coderetreats, module: "admin", only: [] do
     get :manage_status, :on => :member
     put :update_status, :on => :member
+    resources :sessions, only: [:new]
   end
 end
