@@ -69,10 +69,17 @@ describe "Coderetreat list" do
     end
 
     describe "updating the status of a coderetreat" do
+      before do
+        coderetreat.stub(:update_status_to)
+      end
       it "updates the status attribute to the value passed in" do
         coderetreat.should_receive(:update_status_to).with("finished")
 
         CoderetreatLive::Coderetreats.update_status("token", "finished")
+      end
+
+      it "returns the coderetreat updated" do
+        CoderetreatLive::Coderetreats.update_status("token", "finished").should == coderetreat
       end
     end
   end
