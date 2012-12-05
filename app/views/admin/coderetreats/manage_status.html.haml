@@ -34,7 +34,7 @@
       %section.session
         %p.started_at
           Started Around:
-          =session.created_at.to_time
+          =session.created_at.to_time.strftime("%H:%m %p")
         %p.constraints
           Constraints:
           =session.constraints
