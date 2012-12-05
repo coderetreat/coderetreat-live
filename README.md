@@ -2,7 +2,7 @@
 
 # Coderetreat Live
 
-Check out [http://globalday.coderetreat.org/](global day of coderetreat).
+Check out [global day of coderetreat](http://globalday.coderetreat.org/).
 
 ## What is it?
 This is an application to help facilitate coordination of multiple coderetreats on the same day. It is fun to have video calls, know what the other retreat is doing, share ideas, etc. So, since we programmers, let's build one.
