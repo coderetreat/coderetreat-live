@@ -7,7 +7,7 @@ describe Admin::CoderetreatsController do
       stub_const("CoderetreatLive::Coderetreats", coderetreat_lookup)
 
       coderetreat = stub
-      coderetreat_lookup.stub(:for_admin).with("token") { coderetreat }
+      coderetreat_lookup.stub(:for_admin_token).with("token") { coderetreat }
       get :manage, id: "token"
       assigns[:coderetreat].should == coderetreat
     end

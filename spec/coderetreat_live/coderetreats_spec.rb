@@ -51,4 +51,18 @@ describe "Coderetreat list" do
       end
     end
   end
+
+  describe "Looking up an individual item" do
+    context "by admin token" do
+      it "returns the model for the token" do
+        scope_provider = stub
+        stub_const("Coderetreat", scope_provider)
+
+        coderetreat = stub
+        scope_provider.stub(:for_admin).with("token") { coderetreat }
+
+        CoderetreatLive::Coderetreats.for_admin_token("token").should == coderetreat
+      end
+    end
+  end
 end

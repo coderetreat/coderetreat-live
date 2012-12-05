@@ -9,5 +9,9 @@ module CoderetreatLive
     def self.for_collection(coderetreats)
       Presenters::Collection.new(coderetreats)
     end
+
+    def self.for_admin_token(token)
+      ::Coderetreat.for_admin(token)
+    end
   end
 end
