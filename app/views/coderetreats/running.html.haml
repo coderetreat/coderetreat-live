@@ -5,6 +5,7 @@
     -@coderetreats.in_session do |coderetreat|
       %li.coderetreat
         =coderetreat.location
+        .constraints=coderetreat.current_session_constraints
 
 -CoderetreatLive::Coderetreats::StateMachine::RUNNING_NON_SESSION_STATES.each do |state|
   =render partial: "state_listing", locals: {state: state}

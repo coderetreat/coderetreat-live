@@ -29,6 +29,7 @@ class Coderetreat < ActiveRecord::Base
   def current_session_constraints
     current_session.constraints
   end
+
   def current_session
     self.sessions.first
   end

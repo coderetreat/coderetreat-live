@@ -43,6 +43,7 @@ describe "Coderetreat list" do
       it "returns the list from the Coderetreat.running_today scope" do
         scope_provider = stub
         stub_const("Coderetreat", scope_provider)
+        collection.stub(:includes) { collection }
 
         scope_provider.stub(:running_today) { collection }
 
