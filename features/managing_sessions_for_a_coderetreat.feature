@@ -1,4 +1,3 @@
-@wip
 Feature: Managing sessions for a running coderetreat
 
   Background:
@@ -9,5 +8,5 @@ Feature: Managing sessions for a running coderetreat
     When I start a new session
       | constraints |
       | no ifs      |
-    Then I should see the coderetreat is in the status "In Session"
+    Then I should see the coderetreat is in the status "In session"
     And I should see the current session's constraint is "no ifs"
