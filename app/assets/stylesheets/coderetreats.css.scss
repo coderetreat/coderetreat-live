@@ -559,6 +559,23 @@ section.actions {
   }
 }
 
-section.session_information {
-  margin-top: 3em;
+section.sessions {
+  margin-top: 25px;
+
+  section.session_information {
+    margin-top: 3em;
+  }
+
+  section.previous_sessions {
+    .session {
+      margin-top: 1em;
+      border-bottom: 1px solid orange;
+      padding-left: 20px;
+      padding-bottom: 5px;
+
+      p {
+        font-size: 1.75em;
+      }
+    }
+  }
 }

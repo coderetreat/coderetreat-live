@@ -30,3 +30,11 @@
   %section.previous_sessions
     %h3
       Previous Sessions
+    -@coderetreat.sessions.each do |session|
+      %section.session
+        %p.started_at
+          Started Around:
+          =session.created_at.to_time
+        %p.constraints
+          Constraints:
+          =session.constraints
