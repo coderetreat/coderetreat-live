@@ -52,31 +52,28 @@ describe "Coderetreat list" do
     end
   end
 
-  describe "Looking up an individual item" do
-    context "by admin token" do
-      it "returns the model for the token" do
-        scope_provider = stub
-        stub_const("Coderetreat", scope_provider)
+  context "working with an individual item" do
+    let(:coderetreat) { stub(admin_token: "token") }
+    let(:scope_provider) { stub }
+    before do
+      stub_const("Coderetreat", scope_provider)
+      scope_provider.stub(:for_admin).with("token") { coderetreat }
+    end
 
-        coderetreat = stub
-        scope_provider.stub(:for_admin).with("token") { coderetreat }
-
-        CoderetreatLive::Coderetreats.for_admin_token("token").should == coderetreat
+    describe "Lookups" do
+      context "by admin token" do
+        it "returns the model for the token" do
+          CoderetreatLive::Coderetreats.for_admin_token("token").should == coderetreat
+        end
       end
     end
-  end
 
-  describe "updating the status of a coderetreat" do
-    it "updates the status attribute to the value passed in" do
-      scope_provider = stub
-      stub_const("Coderetreat", scope_provider)
+    describe "updating the status of a coderetreat" do
+      it "updates the status attribute to the value passed in" do
+        coderetreat.should_receive(:update_status_to).with("finished")
 
-      coderetreat = stub
-      scope_provider.stub(:for_admin).with("token") { coderetreat }
-
-      coderetreat.should_receive(:update_status_to).with("finished")
-
-      CoderetreatLive::Coderetreats.update_status("token", "finished")
+        CoderetreatLive::Coderetreats.update_status("token", "finished")
+      end
     end
   end
 end
