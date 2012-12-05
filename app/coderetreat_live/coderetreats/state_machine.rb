@@ -1,7 +1,7 @@
 module CoderetreatLive
   module Coderetreats
     module StateMachine
-      STATES = [:not_started, :in_session, :finished]
+      STATES = [:not_started, :in_session, :at_lunch, :on_break, :finished]
 
       def self.default_state_string
         "not_started"
