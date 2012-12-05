@@ -5,6 +5,7 @@ class Admin::CoderetreatsController < ApplicationController
   end
 
   def update_status
-    redirect_to manage_status_coderetreat_url(id: params[:id])
+    coderetreat = CoderetreatLive::Coderetreats.update_status(params[:id], params[:status])
+    redirect_to manage_status_coderetreat_url(id: coderetreat.admin_token)
   end
 end
