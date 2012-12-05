@@ -13,7 +13,10 @@ end
 Given /^I have some coderetreats running today$/ do
   @coderetreats = []
   10.times do |index|
-    @coderetreats << new_coderetreat(CoderetreatLive::Coderetreats::StateMachine::STATES.sample, "City #{index}")
+    @coderetreats << new_coderetreat(CoderetreatLive::Coderetreats::StateMachine::RUNNING_NON_SESSION_STATES.sample, "City #{index}")
+  end
+  2.times do
+    @coderetreats.sample.start_new_session constraints: "Super fun constraints"
   end
 end
 
