@@ -83,6 +83,7 @@ GEM
     mime-types (1.19)
     multi_json (1.4.0)
     nokogiri (1.5.5)
+    pg (0.14.1)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -160,6 +161,7 @@ DEPENDENCIES
   haml
   has_tokens
   jquery-rails
+  pg
   rails (= 3.2.9)
   rake
   rspec-rails
