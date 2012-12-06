@@ -3,4 +3,4 @@
 
 %ul
   -@coderetreats.each do |coderetreat|
-    %li{style: "margin-top:.5em;font-size:1.25em;"}=link_to coderetreat.location, manage_status_coderetreat_path(id: coderetreat.admin_token)
+    %li{style: "margin-top:.5em;font-size:1.25em;"}=link_to coderetreat.location, coderetreat_status_path(coderetreat_id: coderetreat.admin_token)
