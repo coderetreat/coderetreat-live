@@ -35,14 +35,15 @@
       =f.text_area :constraints
       =f.submit "Start new session"
 
-  %section.previous_sessions
-    %h3
-      Previous Sessions
-    -@coderetreat.sessions.each do |session|
-      %section.session_info
-        %p.started_at
-          Started Around:
-          =session.created_at.to_time.strftime("%H:%m %p")
-        %p.constraints
-          Constraints:
-          =session.constraints
+  - unless @coderetreat.previous_sessions.empty?
+    %section.previous_sessions
+      %h3
+        Previous Sessions
+      -@coderetreat.previous_sessions.each do |session|
+        %section.session_info
+          %p.started_at
+            Started Around:
+            =session.created_at.to_time.strftime("%H:%m %p")
+          %p.constraints
+            Constraints:
+            =session.constraints

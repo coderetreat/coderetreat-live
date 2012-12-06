@@ -31,7 +31,11 @@ class Coderetreat < ActiveRecord::Base
   end
 
   def current_session
-    self.sessions.first
+    @current_session ||= self.sessions.first
+  end
+
+  def previous_sessions
+    @previous_session ||= self.sessions - [self.current_session]
   end
 
   def set_default_attribute_values

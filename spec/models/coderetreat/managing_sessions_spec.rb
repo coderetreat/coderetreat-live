@@ -38,4 +38,17 @@ describe "Managing sessions" do
       coderetreat.current_session_constraints.should == "no ifs"
     end
   end
+
+  describe "#previous_sessions" do
+    it "does not include the current session in the list" do
+      coderetreat = Coderetreat.create
+      expected = []
+
+      expected << coderetreat.start_new_session("constraints" => "no loops")
+      expected << coderetreat.start_new_session("constraints" => "no ifs")
+      coderetreat.start_new_session "constraints" => "no primitives"
+
+      coderetreat.previous_sessions.should =~ expected
+    end
+  end
 end
