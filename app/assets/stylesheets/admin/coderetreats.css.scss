@@ -19,3 +19,20 @@
     }
   }
 }
+
+form {
+
+  input[type=submit] {
+    margin-left: 0px;
+    width: 100px;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  textarea {
+    height: 5em;
+    width: 300px;
+  }
+}

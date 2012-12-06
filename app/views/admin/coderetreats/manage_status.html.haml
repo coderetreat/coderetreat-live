@@ -24,16 +24,16 @@
       =@coderetreat.current_session.constraints
 
 %section.sessions
-  %header
-    %h2 Sessions Today
 
   %section.create_new
-    %h3
-      Start A New Session
+    %header
+      %h2 Start A New Session
     =form_for CoderetreatSession.new, url: coderetreat_sessions_path(coderetreat_id: @coderetreat.admin_token) do |f|
-      =f.label :constraints
+      =f.submit "Start"
+      %br
+      =f.label :constraints, "With these constraints (optional)"
+      %br
       =f.text_area :constraints
-      =f.submit "Start new session"
 
   - unless @coderetreat.previous_sessions.empty?
     %section.previous_sessions

@@ -1,7 +1,7 @@
 When /^I start a new session$/ do |table|
   session_info = table.hashes.first
-  fill_in "Constraints", with: session_info["constraints"]
-  click_button "Start new session"
+  fill_in "coderetreat_session_constraints", with: session_info["constraints"]
+  click_button "Start"
 end
 
 Then /^I should see the current session's constraint is "(.*?)"$/ do |constraint|
