@@ -10,7 +10,7 @@ class Coderetreat < ActiveRecord::Base
   has_many :sessions, class_name: "CoderetreatSession", order: "created_at DESC", :dependent => :destroy
 
   def self.running_today
-    self.where(:date => DateTime.now.to_date)
+    self.where("date > ?", 1.week.ago)
   end
 
   def update_status_to(new_status)
