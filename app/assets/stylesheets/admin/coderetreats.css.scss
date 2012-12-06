@@ -1,3 +1,21 @@
 // Place all the styles related to the admin/coderetreats controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.actions.status_update {
+  float: right;
+  width: 135px;
+  border: 1px dotted orange;
+  border-right: 0px;
+  padding: 10px;
+  padding-right: 0px;
+  margin-right: -10px;
+  ul {
+    float: right;
+    margin-top: -15px;
+    li {
+      display: block;
+      margin-top: 35px;
+    }
+  }
+}
