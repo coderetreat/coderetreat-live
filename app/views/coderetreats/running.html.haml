@@ -7,9 +7,6 @@
         =coderetreat.location
         .constraints=coderetreat.current_session_constraints
 
--CoderetreatLive::Coderetreats::StateMachine::RUNNING_NON_SESSION_STATES.each do |state|
-  =render partial: "state_listing", locals: {state: state}
-
--CoderetreatLive::Coderetreats::StateMachine::NOT_RUNNING_STATES.each do |state|
-  =render partial: "state_listing", locals: {state: state}
+=render partial: "state_listing", collection: CoderetreatLive::Coderetreats::StateMachine::RUNNING_NON_SESSION_STATES, :as => :state
+=render partial: "state_listing", collection: CoderetreatLive::Coderetreats::StateMachine::NOT_RUNNING_STATES, :as => :state
 
