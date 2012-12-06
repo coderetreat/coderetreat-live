@@ -5,7 +5,7 @@
     -@coderetreats.in_session do |coderetreat|
       %li.coderetreat
         =coderetreat.location
-        .constraints=coderetreat.current_session_constraints
+        .constraints=simple_format coderetreat.current_session_constraints
 
 =render partial: "state_listing", collection: CoderetreatLive::Coderetreats::StateMachine::RUNNING_NON_SESSION_STATES, :as => :state
 =render partial: "state_listing", collection: CoderetreatLive::Coderetreats::StateMachine::NOT_RUNNING_STATES, :as => :state
