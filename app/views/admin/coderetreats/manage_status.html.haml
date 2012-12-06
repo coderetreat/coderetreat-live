@@ -14,8 +14,6 @@
 
 -if @coderetreat.in_session?
   %section.current_session.session_info
-    %header
-      %h3 Current Session Information
     %p.started_at
       Started Around:
       =@coderetreat.current_session.created_at.to_time.strftime("%H:%m %p")
@@ -37,7 +35,7 @@
 
   - unless @coderetreat.previous_sessions.empty?
     %section.previous_sessions
-      %h3
+      %h2
         Previous Sessions
       -@coderetreat.previous_sessions.each do |session|
         %section.session_info
