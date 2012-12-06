@@ -8,4 +8,6 @@ CoderetreatLive::Application.routes.draw do
     put :update_status, :on => :member
     resources :sessions, only: [:create], controller: "coderetreat_sessions"
   end
+
+  root to: "coderetreats#running_today"
 end
