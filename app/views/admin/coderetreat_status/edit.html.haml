@@ -19,7 +19,7 @@
       =@coderetreat.current_session.created_at.to_time.strftime("%H:%m %p")
     %p.constraints
       Constraints:
-      =@coderetreat.current_session.constraints
+      =simple_format @coderetreat.current_session.constraints
 
 %section.sessions
 
@@ -44,4 +44,4 @@
             =session.created_at.to_time.strftime("%H:%m %p")
           %p.constraints
             Constraints:
-            =session.constraints
+            =simple_format session.constraints
