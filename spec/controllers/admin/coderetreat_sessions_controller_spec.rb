@@ -31,4 +31,12 @@ describe Admin::CoderetreatSessionsController do
       assigns[:session].should == session
     end
   end
+
+  describe "PUT /update" do
+    it "updates the session for the coderetreat" do
+      session_manager.should_receive(:update_session_info_for).with("token", "4", {"constraint" => "new one"})
+
+      put :update, coderetreat_id: "token", id: "4", coderetreat_session: {constraint: "new one"}
+    end
+  end
 end

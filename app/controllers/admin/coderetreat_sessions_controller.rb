@@ -5,6 +5,8 @@ class Admin::CoderetreatSessionsController < ApplicationController
   end
 
   def update
+    CoderetreatLive::Coderetreats::Sessions.update_session_info_for(params[:coderetreat_id], params[:id], params[:coderetreat_session])
+
     redirect_to edit_coderetreat_status_url(coderetreat_id: params[:coderetreat_id])
   end
 
