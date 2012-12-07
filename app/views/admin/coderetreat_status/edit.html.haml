@@ -15,13 +15,15 @@
     %span.coderetreat_status=human_view_coderetreat_status(@coderetreat.status)
 
 -if @coderetreat.in_session?
-  %section.current_session.session_info
+  %section.current_session.session_info{id: "session_#{@coderetreat.current_session.id}"}
     %p.started_at
       Started Around:
       =@coderetreat.current_session.created_at.to_time.strftime("%H:%m %p")
     %p.constraints
       Constraints:
       =simple_format @coderetreat.current_session.constraints
+    %section.actions
+      .action=link_to "remove", coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @coderetreat.current_session), :method => :delete
 
 %section.sessions
 
@@ -40,7 +42,7 @@
       %h2
         Previous Sessions
       -@coderetreat.previous_sessions.each do |session|
-        %section.session_info
+        %section.session_info{id: "session_#{session.id}"}
           %p.started_at
             Started Around:
             =session.created_at.to_time.strftime("%H:%m %p")
