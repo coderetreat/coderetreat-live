@@ -2,8 +2,23 @@ require 'coderetreats/sessions'
 
 describe "Starting a new session" do
   let(:coderetreat) { stub }
+  let(:session) { stub }
+  describe ".for_coderetreat" do
+    before do
+      CoderetreatLive::Coderetreats.stub(:for_admin_token) { coderetreat }
+      coderetreat.stub(:session_by_id) { session }
+    end
+    it "returns the session as first value" do
+      returned_session, _ = CoderetreatLive::Coderetreats::Sessions.for_coderetreat("token", "5")
+      returned_session.should == session
+    end
+    it "returns the coderetreat as second value" do
+      _, returned_coderetreat = CoderetreatLive::Coderetreats::Sessions.for_coderetreat("token", "5")
+      returned_coderetreat.should == coderetreat
+    end
+  end
+
   describe ".start_new_session_for" do
-    let(:session) { stub }
     before do
       CoderetreatLive::Coderetreats.stub(:update_status) { coderetreat }
       coderetreat.stub(:start_new_session) { session }

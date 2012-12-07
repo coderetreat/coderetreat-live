@@ -11,6 +11,11 @@ module CoderetreatLive
         coderetreat = Coderetreats.for_admin_token(coderetreat_token)
         coderetreat.remove_session(session_id)
       end
+
+      def self.for_coderetreat(coderetreat_token, session_id)
+        coderetreat = Coderetreats.for_admin_token(coderetreat_token)
+        [coderetreat.session_by_id(session_id), coderetreat]
+      end
     end
   end
 end
