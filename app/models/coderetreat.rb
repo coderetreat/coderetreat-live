@@ -22,6 +22,10 @@ class Coderetreat < ActiveRecord::Base
     sessions.create session_params
   end
 
+  def remove_session(session_id)
+    sessions.destroy session_id
+  end
+
   def in_session?
     CoderetreatLive::Coderetreats::StateMachine.in_session_status?(self.status)
   end

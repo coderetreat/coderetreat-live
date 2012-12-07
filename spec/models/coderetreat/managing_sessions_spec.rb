@@ -51,4 +51,19 @@ describe "Managing sessions" do
       coderetreat.previous_sessions.should =~ expected
     end
   end
+
+  describe "#remove_session" do
+    it "removes the session from its list" do
+      coderetreat = Coderetreat.create
+      expected = []
+
+      expected << coderetreat.start_new_session("constraints" => "no loops")
+      remove_this = coderetreat.start_new_session "constraints" => "no primitives"
+
+      coderetreat.remove_session remove_this.id
+
+      coderetreat.sessions.should =~ expected
+    end
+  end
+
 end
