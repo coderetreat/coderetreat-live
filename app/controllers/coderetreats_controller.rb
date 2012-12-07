@@ -4,8 +4,4 @@ class CoderetreatsController < ApplicationController
     @coderetreats = CoderetreatLive::Coderetreats.running_today
     render (@coderetreats.empty? ? "none_running" : "running")
   end
-
-  def index
-    @coderetreats = Coderetreat.all
-  end
 end

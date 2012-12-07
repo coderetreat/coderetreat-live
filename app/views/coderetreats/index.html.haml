@@ -1,6 +1,0 @@
-%header
-  %h2 Temporary index of links to coderetreat management pages
-
-%ul
-  -@coderetreats.each do |coderetreat|
-    %li{style: "margin-top:.5em;font-size:1.25em;"}=link_to coderetreat.location, edit_coderetreat_status_path(coderetreat_id: coderetreat.admin_token)
