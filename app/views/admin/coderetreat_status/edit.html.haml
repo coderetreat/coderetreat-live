@@ -46,6 +46,7 @@
         %section.session_info{id: "session_#{session.id}"}
           %ul.actions{style: "float: right"}
             %li=link_to "remove", coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @coderetreat.current_session), :method => :delete
+            %li.action=link_to "edit", edit_coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: session)
           %p.started_at
             Started Around:
             =session.created_at.to_time.strftime("%H:%m %p")
