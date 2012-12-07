@@ -37,6 +37,25 @@ form {
   }
 }
 
-.previous_sessions {
-  margin-top: 20px;
+.current_session {
+  ul.actions {
+    padding-left: 0px;
+    li {
+      display: inline;
+    }
+  }
 }
+
+.previous_sessions {
+  .session_info {
+    clear: both;
+  }
+  ul.actions {
+    float: right;
+    list-style-type: none;
+    li {
+      height: 50px;
+    }
+  }
+}
+
