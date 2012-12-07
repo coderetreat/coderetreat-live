@@ -4,6 +4,17 @@ require 'models/coderetreat_session'
 require 'models/coderetreat'
 
 describe "Managing sessions" do
+  describe "#session_by_id" do
+    it "returns the session for that id" do
+      coderetreat = Coderetreat.create
+      session = coderetreat.start_new_session({"constraints" => "not important"})
+
+      returned_session = coderetreat.session_by_id session.id
+
+      returned_session.should == session
+    end
+  end
+
   describe "#start_new_session" do
     it "adds a new CoderetreatSession to its list" do
       coderetreat = Coderetreat.create
