@@ -4,6 +4,14 @@ When /^I start a new session$/ do |table|
   click_button "Start"
 end
 
+When /^I edit the current session to have constraints "(.*?)"$/ do |new_constraints|
+  within(".current_session.session_info") do
+    click_link "edit"
+  end
+  fill_in "coderetreat_session_constraints", with: new_constraints
+  click_button "Update"
+end
+
 When /^I delete the session with constraint "(.*?)"$/ do |constraints|
   session = CoderetreatSession.find_by_constraints constraints
   within("#session_#{session.id}") do

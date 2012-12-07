@@ -19,4 +19,16 @@ describe Admin::CoderetreatSessionsController do
       post :destroy, coderetreat_id: "token", id: "5"
     end
   end
+
+  describe "GET /edit" do
+    it "retrieves the coderetreat and session" do
+      session = stub("session")
+      session_manager.stub(:for_coderetreat).with("token", "4") { [session, coderetreat] }
+
+      get :edit, coderetreat_id: "token", id: "4"
+
+      assigns[:coderetreat].should == coderetreat
+      assigns[:session].should == session
+    end
+  end
 end

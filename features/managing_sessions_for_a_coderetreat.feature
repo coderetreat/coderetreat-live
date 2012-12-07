@@ -31,3 +31,7 @@ Feature: Managing sessions for a running coderetreat
     Then I should see the previous sessions' constraints are
       | constraints |
       | no ifs      |
+
+  Scenario: Editing the current session
+    When I edit the current session to have constraints "no looping"
+    Then I should see the current session's constraint is "no looping"

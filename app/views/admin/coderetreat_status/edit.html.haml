@@ -22,8 +22,9 @@
     %p.constraints
       Constraints:
       =simple_format @coderetreat.current_session.constraints
-    %section.actions
-      .action=link_to "remove", coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @coderetreat.current_session), :method => :delete
+    %ul.actions
+      %li.action=link_to "remove", coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @coderetreat.current_session), :method => :delete
+      %li.action=link_to "edit", edit_coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @coderetreat.current_session)
 
 %section.sessions
 
@@ -43,9 +44,8 @@
         Previous Sessions
       -@coderetreat.previous_sessions.each do |session|
         %section.session_info{id: "session_#{session.id}"}
-          %section.actions{style: "float: right"}
-            %ul
-              %li=link_to "remove", coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @coderetreat.current_session), :method => :delete
+          %ul.actions{style: "float: right"}
+            %li=link_to "remove", coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @coderetreat.current_session), :method => :delete
           %p.started_at
             Started Around:
             =session.created_at.to_time.strftime("%H:%m %p")
