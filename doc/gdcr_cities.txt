@@ -1,0 +1,157 @@
+Buenos Aires, Argentina
+Brisbane, Australia
+Melbourne, Australia
+Perth , Australia
+Sydney, Australia
+Vienna, Austria
+Mechelen, Belgium
+Recife, Brazil
+São Paulo, Brazil
+Edmonton, Canada
+Montreal, Canada
+Summerside, PE, Canada
+Toronto, Canada
+Toronto, Canada
+Winnipeg, Canada
+Beijing, China
+Hangzhou, China
+Shanghai, China
+Suzhou, China
+Taiyuan, China
+Bogotá D.C, Colombia
+San Jose , Costa Rica
+Prague, Czech Republic
+Vsetín, Czech Republic
+Copenhagen, Denmark
+Quito, Ecuador
+Turku, Finland
+Bordeaux, France
+Lyon, France
+Paris, France
+Toulouse, France
+Berlin, Germany
+Bielefeld, Germany
+Cologne, Germany
+Düsseldorf, Germany
+Hamburg, Germany
+Munich, Germany
+Munich, Germany
+Münster, Germany
+Nürnberg, Germany
+Passau, Germany
+Wiesbaden, Germany
+Budapest, Hungary
+Chennai, India
+Mumbai, India
+Dublin, Ireland
+Haifa, Israel
+Tel Aviv, Israel
+Genoa, Italy
+Milan, Italy
+Fukuoka, Japan
+Matsuyama, Ehime, Japan
+Osaka, Japan
+Tokyo, Japan
+Riga, Latvia
+Vilnius, Lithuania
+Skopje, Macedonia
+Colima, Mexico
+Guadalajara, Mexico
+Mexico City, Mexico
+Monterrey, Mexico
+Auckland, New Zealand
+Auckland, New Zealand
+Wellington, New Zealand
+Oslo, Norway
+Karachi, Pakistan
+Lima, Peru
+Bielsko-Biała, Poland
+Kraków, Poland
+Łódź, Poland
+Poznań, Poland
+Bucharest, Romania
+Cluj-Napoca, Romania
+Cluj-Napoca, Romania
+Sibiu, Romania
+Timisoara, Romania
+Singapore, Singapore
+Ljubljana, Slovenia
+Cape Town, South Africa
+Durban, South Africa
+Johannesburg, South Africa
+Johannesburg, South Africa
+Barcelona, Spain
+Bilbao, Spain
+Donostia, Spain
+Madrid, Spain
+Santiago de Compostela, Spain
+Valencia, Spain
+Zaragoza, Spain
+Malmö, Sweden
+Stockholm, Sweden
+Stockholm, Sweden
+Umeå, Sweden
+Geneva, Switzerland
+Zürich, Switzerland
+Amsterdam, The Netherlands
+Groningen, The Netherlands
+Haarlem, The Netherlands
+Rotterdam, The Netherlands
+Tilburg, The Netherlands
+Istanbul, Turkey
+Odessa, Ukraine
+Aberdeen, Scotland, United Kingdom
+Cambridge, England, United Kingdom
+Edinburgh, Scotland, United Kingdom
+Glasgow, Scotland, United Kingdom
+London, England, United Kingdom
+London, England, United Kingdom
+London, England, United Kingdom
+Manchester, England, United Kingdom
+Peterborough, England, United Kingdom
+Sheffield, England, United Kingdom
+American Fork, UT, USA
+Ann Arbor, MI, USA
+Atlanta, GA, USA
+Boulder, CO, USA
+Cambridge, MA, USA
+Chandler, AZ, USA
+Chicago, IL, USA
+Cleveland, OH, USA
+Clifton Park, NY, USA
+Columbia, MD, USA
+Columbus, OH, USA
+Council Bluffs, IA, USA
+Denver, CO, USA
+Fairmont, WV, USA
+Flint, MI, USA
+Fort Collins, CO, USA
+Helena, MT, USA
+Honolulu, HI, USA
+Houston, TX, USA
+Irvine, CA, USA
+Ithaca, NY, USA
+Kansas City, KS, USA
+Layton, UT, USA
+Lehi, UT, USA
+Louisville, KY, USA
+Madison, WI, USA
+Miami, FL, USA
+Minneapolis, MN, USA
+Mountain View, CA, USA
+New York City, NY, USA
+Norfolk, VA, USA
+Oak Ridge, TN, USA
+Orlando, FL, USA
+Pensacola, FL, USA
+Pittsburgh, PA, USA
+Portland, OR, USA
+Reston, VA, USA
+Rockaway, NJ, USA
+San Francisco, CA, USA
+Tampa, FL, USA
+Washington DC, USA
+Mérida, Venezuela
+Hanoi, Vietnam
+Ho Chi Minh City, Vietnam
+
