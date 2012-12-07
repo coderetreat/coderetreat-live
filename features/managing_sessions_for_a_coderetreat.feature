@@ -3,22 +3,31 @@ Feature: Managing sessions for a running coderetreat
   Background:
     Given I have a running coderetreat
     And I go to manage the coderetreat
-
-  Scenario: Starting a new session
-    When I start a new session
+    And I start a new session
       | constraints |
       | no ifs      |
+
+  Scenario: Starting a new session
     Then I should see the coderetreat is in the status "In session"
     And I should see the current session's constraint is "no ifs"
 
   Scenario: Deleting the current session
     When I start a new session
       | constraints |
-      | no ifs      |
-    And I start a new session
-      | constraints |
       | no talking  |
     Then I should see the current session's constraint is "no talking"
     When I delete the session with constraint "no talking"
     And I should see the current session's constraint is "no ifs"
 
+  Scenario: Deleting a previous session
+    When I start a new session
+      | constraints |
+      | no looping  |
+    And I start a new session
+      | constraints |
+      | no talking  |
+    Then I should see the current session's constraint is "no talking"
+    When I delete the session with constraint "no looping"
+    Then I should see the previous sessions' constraints are
+      | constraints |
+      | no ifs      |

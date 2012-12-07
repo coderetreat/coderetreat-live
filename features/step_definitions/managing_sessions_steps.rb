@@ -17,3 +17,11 @@ Then /^I should see the current session's constraint is "(.*?)"$/ do |constraint
   end
 end
 
+Then /^I should see the previous sessions' constraints are$/ do |constraints|
+  page.should have_css(".previous_sessions", count: constraints.hashes.count)
+  within(".previous_sessions") do
+    constraints.hashes.each do |constraint_data|
+      page.should have_text(constraint_data["constraints"])
+    end
+  end
+end

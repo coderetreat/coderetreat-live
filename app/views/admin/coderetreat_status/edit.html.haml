@@ -43,6 +43,9 @@
         Previous Sessions
       -@coderetreat.previous_sessions.each do |session|
         %section.session_info{id: "session_#{session.id}"}
+          %section.actions{style: "float: right"}
+            %ul
+              %li=link_to "remove", coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @coderetreat.current_session), :method => :delete
           %p.started_at
             Started Around:
             =session.created_at.to_time.strftime("%H:%m %p")
