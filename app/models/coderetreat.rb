@@ -26,6 +26,10 @@ class Coderetreat < ActiveRecord::Base
     sessions.create session_params
   end
 
+  def update_session_info(session_id, session_params)
+    sessions.find(session_id).update_attributes session_params
+  end
+
   def remove_session(session_id)
     sessions.destroy session_id
   end

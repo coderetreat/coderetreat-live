@@ -15,6 +15,17 @@ describe "Managing sessions" do
     end
   end
 
+  describe ".update_session_info" do
+    it "updates the session info for the given session" do
+      coderetreat = Coderetreat.create
+      session = coderetreat.start_new_session({"constraints" => "not important"})
+
+      coderetreat.update_session_info(session.id, {"constraints" => "yes important"})
+
+      coderetreat.session_by_id(session.id).constraints.should == "yes important"
+    end
+  end
+
   describe "#start_new_session" do
     it "adds a new CoderetreatSession to its list" do
       coderetreat = Coderetreat.create
