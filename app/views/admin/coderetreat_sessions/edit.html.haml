@@ -3,7 +3,7 @@
 
 %h2 Update The Constraint For This Session
 
-=form_for :coderetreat_session, url: coderetreat_sessions_path(coderetreat_id: @coderetreat.admin_token) do |f|
+=form_for @session, url: coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @session.id) do |f|
   =f.submit "Update"
   %br
   =f.label :constraints, "With these constraints (optional)"
