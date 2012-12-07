@@ -18,8 +18,20 @@ class Coderetreat < ActiveRecord::Base
     self
   end
 
+  def session_by_id(session_id)
+    sessions.find session_id
+  end
+
   def start_new_session(session_params)
     sessions.create session_params
+  end
+
+  def update_session_info(session_id, session_params)
+    sessions.find(session_id).update_attributes session_params
+  end
+
+  def remove_session(session_id)
+    sessions.destroy session_id
   end
 
   def in_session?

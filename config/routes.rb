@@ -5,7 +5,7 @@ CoderetreatLive::Application.routes.draw do
 
   resources :coderetreats, module: "admin", only: [] do
     resource :status, only: [:edit, :update], controller: "coderetreat_status"
-    resources :sessions, only: [:create], controller: "coderetreat_sessions"
+    resources :sessions, only: [:create, :edit, :update, :destroy], controller: "coderetreat_sessions"
   end
 
   root to: "coderetreats#running_today"

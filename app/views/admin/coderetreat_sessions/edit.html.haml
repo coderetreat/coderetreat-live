@@ -1,0 +1,11 @@
+%h2
+  =@coderetreat.location
+
+%h2 Update The Constraint For This Session
+
+=form_for @session, url: coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @session.id) do |f|
+  =f.label :constraints, "Constraints for this session"
+  %br
+  =f.text_area :constraints
+  %br
+  =f.submit "Update"

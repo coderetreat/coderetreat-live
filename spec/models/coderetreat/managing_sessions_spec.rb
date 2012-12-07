@@ -4,6 +4,28 @@ require 'models/coderetreat_session'
 require 'models/coderetreat'
 
 describe "Managing sessions" do
+  describe "#session_by_id" do
+    it "returns the session for that id" do
+      coderetreat = Coderetreat.create
+      session = coderetreat.start_new_session({"constraints" => "not important"})
+
+      returned_session = coderetreat.session_by_id session.id
+
+      returned_session.should == session
+    end
+  end
+
+  describe ".update_session_info" do
+    it "updates the session info for the given session" do
+      coderetreat = Coderetreat.create
+      session = coderetreat.start_new_session({"constraints" => "not important"})
+
+      coderetreat.update_session_info(session.id, {"constraints" => "yes important"})
+
+      coderetreat.session_by_id(session.id).constraints.should == "yes important"
+    end
+  end
+
   describe "#start_new_session" do
     it "adds a new CoderetreatSession to its list" do
       coderetreat = Coderetreat.create
@@ -51,4 +73,19 @@ describe "Managing sessions" do
       coderetreat.previous_sessions.should =~ expected
     end
   end
+
+  describe "#remove_session" do
+    it "removes the session from its list" do
+      coderetreat = Coderetreat.create
+      expected = []
+
+      expected << coderetreat.start_new_session("constraints" => "no loops")
+      remove_this = coderetreat.start_new_session "constraints" => "no primitives"
+
+      coderetreat.remove_session remove_this.id
+
+      coderetreat.sessions.should =~ expected
+    end
+  end
+
 end

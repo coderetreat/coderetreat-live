@@ -1,9 +1,36 @@
 require 'coderetreats/sessions'
 
 describe "Starting a new session" do
+  let(:coderetreat) { stub }
+  let(:session) { stub }
+  describe ".for_coderetreat" do
+    before do
+      CoderetreatLive::Coderetreats.stub(:for_admin_token) { coderetreat }
+      coderetreat.stub(:session_by_id) { session }
+    end
+    it "returns the session as first value" do
+      returned_session, _ = CoderetreatLive::Coderetreats::Sessions.for_coderetreat("token", "5")
+      returned_session.should == session
+    end
+    it "returns the coderetreat as second value" do
+      _, returned_coderetreat = CoderetreatLive::Coderetreats::Sessions.for_coderetreat("token", "5")
+      returned_coderetreat.should == coderetreat
+    end
+  end
+
+  describe ".update_session_info_for" do
+    before do
+      CoderetreatLive::Coderetreats.stub(:for_admin_token) { coderetreat }
+    end
+    it "tells the coderetreat to update the session" do
+      session_id = "5"
+      session_info = {"constraints" => "fun"}
+      coderetreat.should_receive(:update_session_info).with(session_id, session_info)
+      CoderetreatLive::Coderetreats::Sessions.update_session_info_for("token", session_id, session_info)
+    end
+  end
+
   describe ".start_new_session_for" do
-    let(:coderetreat) { stub }
-    let(:session) { stub }
     before do
       CoderetreatLive::Coderetreats.stub(:update_status) { coderetreat }
       coderetreat.stub(:start_new_session) { session }
@@ -21,6 +48,16 @@ describe "Starting a new session" do
 
     it "returns the session that was started" do
       CoderetreatLive::Coderetreats::Sessions.start_new_session_for("token", stub).should == session
+    end
+  end
+
+  describe ".remove_session_from" do
+    it "tells coderetreat to remove the session given by the id" do
+      CoderetreatLive::Coderetreats.stub(:for_admin_token).with("token") { coderetreat }
+      coderetreat.should_receive(:remove_session).with("5")
+
+
+      CoderetreatLive::Coderetreats::Sessions.remove_session_from("token", "5")
     end
   end
 end
