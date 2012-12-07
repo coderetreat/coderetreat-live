@@ -7,6 +7,11 @@ module CoderetreatLive
         coderetreat.start_new_session(session_details)
       end
 
+      def self.update_session_info_for(coderetreat_token, session_id, session_details)
+        coderetreat = Coderetreats.for_admin_token(coderetreat_token)
+        coderetreat.update_session_info(session_id, session_details)
+      end
+
       def self.remove_session_from(coderetreat_token, session_id)
         coderetreat = Coderetreats.for_admin_token(coderetreat_token)
         coderetreat.remove_session(session_id)

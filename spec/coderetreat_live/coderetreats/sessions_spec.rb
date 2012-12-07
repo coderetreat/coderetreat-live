@@ -18,6 +18,18 @@ describe "Starting a new session" do
     end
   end
 
+  describe ".update_session_info_for" do
+    before do
+      CoderetreatLive::Coderetreats.stub(:for_admin_token) { coderetreat }
+    end
+    it "tells the coderetreat to update the session" do
+      session_id = "5"
+      session_info = {"constraints" => "fun"}
+      coderetreat.should_receive(:update_session_info).with(session_id, session_info)
+      CoderetreatLive::Coderetreats::Sessions.update_session_info_for("token", session_id, session_info)
+    end
+  end
+
   describe ".start_new_session_for" do
     before do
       CoderetreatLive::Coderetreats.stub(:update_status) { coderetreat }
