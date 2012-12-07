@@ -9,6 +9,7 @@ gem 'haml'
 
 gem 'has_tokens'
 
+gem 'newrelic_rpm'
 gem 'unicorn'
 
 group :assets do
