@@ -39,7 +39,7 @@ class Coderetreat < ActiveRecord::Base
   end
 
   def current_session_constraints
-    current_session.constraints
+    current_session.constraints if current_session
   end
 
   def current_session
