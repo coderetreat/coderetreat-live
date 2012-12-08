@@ -21,7 +21,7 @@
       =@coderetreat.current_session.created_at.to_time.strftime("%H:%m %p")
     %p.constraints
       Constraints:
-      =simple_format @coderetreat.current_session.constraints
+      =simple_format @coderetreat.current_session_constraints
     %ul.actions
       %li.action=link_to "remove", coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @coderetreat.current_session), :method => :delete
       %li.action=link_to "edit", edit_coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @coderetreat.current_session)
