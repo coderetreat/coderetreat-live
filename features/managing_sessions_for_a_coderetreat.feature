@@ -16,7 +16,7 @@ Feature: Managing sessions for a running coderetreat
       | constraints |
       | no talking  |
     Then I should see the current session's constraint is "no talking"
-    When I delete the session with constraint "no talking"
+    When I delete the current session
     And I should see the current session's constraint is "no ifs"
 
   Scenario: Deleting a previous session

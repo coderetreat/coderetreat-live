@@ -41,8 +41,8 @@
   - unless @coderetreat.previous_sessions.empty?
     %section.previous_sessions
       %h2
-        Previous Sessions
-      -@coderetreat.previous_sessions.each do |session|
+        Sessions so far
+      -@coderetreat.sessions.each do |session|
         %section.session_info{id: "session_#{session.id}"}
           %ul.actions
             %li=link_to "remove", coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @coderetreat.current_session), :method => :delete
