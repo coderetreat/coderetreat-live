@@ -42,12 +42,21 @@ describe "Managing sessions" do
   describe "#in_session?" do
     it "uses the state machine to determine if it is session" do
       coderetreat = Coderetreat.new status: "not_started"
+      coderetreat.sessions << CoderetreatSession.new
       CoderetreatLive::Coderetreats::StateMachine.stub(:in_session_status?).with(coderetreat.status) { false }
       coderetreat.should_not be_in_session
 
       coderetreat = Coderetreat.new status: "in_session"
+      coderetreat.sessions << CoderetreatSession.new
       CoderetreatLive::Coderetreats::StateMachine.stub(:in_session_status?).with(coderetreat.status) { true }
       coderetreat.should be_in_session
+    end
+
+    it "needs to have an actual session" do
+      coderetreat = Coderetreat.new status: "in_session"
+      CoderetreatLive::Coderetreats::StateMachine.stub(:in_session_status?).with(coderetreat.status) { true }
+
+      coderetreat.should_not be_in_session
     end
   end
 

@@ -35,11 +35,11 @@ class Coderetreat < ActiveRecord::Base
   end
 
   def in_session?
-    CoderetreatLive::Coderetreats::StateMachine.in_session_status?(self.status)
+    CoderetreatLive::Coderetreats::StateMachine.in_session_status?(self.status) && current_session.present?
   end
 
   def current_session_constraints
-    current_session.constraints
+    current_session.constraints if current_session
   end
 
   def current_session

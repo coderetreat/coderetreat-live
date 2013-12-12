@@ -21,12 +21,20 @@ When /^I edit the previous session "(.*?)" to have constraints "(.*?)"$/ do |pre
   click_button "Update"
 end
 
+When /^I delete the current session$/ do
+  within(".current_session") do
+    click_link "remove"
+  end
+end
+
 When /^I delete the session with constraint "(.*?)"$/ do |constraints|
   session = CoderetreatSession.find_by_constraints constraints
   within("#session_#{session.id}") do
     click_link "remove"
   end
 end
+
+
 
 Then /^I should see the current session's constraint is "(.*?)"$/ do |constraint|
   within(".current_session.session_info") do
