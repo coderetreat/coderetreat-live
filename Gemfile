@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+ruby '2.1.2'
 
 gem 'rails', '3.2.9'
 gem 'jquery-rails'
@@ -18,7 +18,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development do
+group :development, :test do
   gem 'rspec-rails'
 end
 
@@ -26,7 +26,6 @@ group :test do
   gem 'rake'
   gem 'database_cleaner', require: false
   gem 'cucumber-rails', require: false
-  gem 'rspec-rails', require: false
 end
 
 group :development, :test do
@@ -36,4 +35,3 @@ end
 group :production do
   gem 'pg'
 end
-
