@@ -1,12 +1,5 @@
 @import "normalize";
 
-// Colour values
-$fuelYellow: #F0A130; //Headers
-$tiaMaria: #D73513; //Links, Nav Boxes
-$lemonChiffon: #FFFACB; //Text Blocks
-$paarl: #995E24; //Header Backgrounds
-$eclipse: #312118; //Boarders
-
 @import "colors";
 @import "fonts";
 
@@ -26,57 +19,6 @@ a {
   text-decoration: none;
   &:hover, &:visited { color: $green; }
   &:hover { text-decoration: underline; }
-}
-
-.wrapper {margin:0 auto; width:1028px;}
-
-header.branding {background:$paarl; margin-bottom:10px; padding:10px 0 10px 40px; zoom: 1; width:988px;
-	&:before, &:after { content: ""; display: table; }
-	&:after { clear: both; }
-	a#logo {float:left;}
-	h1 {float:left; margin-left: 50px; margin-top:20px;
-		a {background: image-url("gdcr-logo.png") 0 0 no-repeat; display:block; height: 115px; overflow: hidden; text-indent: -9999em; width: 532px;}
-	}
-}
-
-aside {background: image-url("bg-content-btm.jpg") repeat-x scroll left bottom $lemonChiffon; float: right; margin: 0 0 50px; padding: 20px 0 40px; text-align: center; width: 220px;
-	section.sponsors header {
-	    color: #995E24;
-	    font-size: 1.2em;
-	    margin-top: 15px;
-	}
-	.sponsors ul {
-	    padding: 0;
-	    width: 216px;
-	}
-	.sponsors ul li {
-	    font-size: 1.3em;
-	    line-height: 1.8;
-	    list-style-type: none;
-	    padding: 5px;
-	}
-}
-
-article {background: image-url("bg-content-btm.jpg") repeat-x scroll left bottom $lemonChiffon; float: left; margin: 0 0 50px; padding: 20px 10px 60px; width: 778px;
-	.coderetreats {
-		header {margin-top:20px; padding:20px 0 0;
-			h2 {border-bottom:1px solid $paarl; padding:0 10px 10px;}
-		}
-		ul {list-style: none; margin:0 10px; padding:0; zoom: 1;
-			&:before, &:after { content: ""; display: table; }
-			&:after { clear: both; }
-			li {border-bottom:1px solid $eclipse; border-color: transparentize($eclipse, 0.9); display:block; float:left; font-weight: bold; padding-bottom:10px; padding-right:20px; padding-top:10px; vertical-align: top; width:169px;
-				.session_information {font-weight: normal;
-					.topic {clear:left;
-						&:before {content:"Topic: "; font-weight: bold;}
-					}
-				}
-			}
-		}
-		&.in_session {
-			ul li {min-height: 100px; height:100px;}
-		}
-	}
 }
 
 .actions {
