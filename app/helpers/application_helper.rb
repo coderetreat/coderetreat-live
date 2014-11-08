@@ -4,6 +4,12 @@ module ApplicationHelper
     "&style=feature:all|element:labels|visibility:off"
   end
 
+  def galaxy_sponsors
+    [
+      Sponsor.new('Thoughtworks', 'http://www.thoughtworks.com/')
+    ]
+  end
+
   def globe_sponsors
     [
       Sponsor.new('Github', 'https://github.com'),
