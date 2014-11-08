@@ -1,6 +1,6 @@
 %section.coderetreats{class: state}
   %header
     %h2=human_view_coderetreat_status(state)
-  %ul
+  .coderetreats
     -@coderetreats.by_status(state) do |coderetreat|
       %li.coderetreat=coderetreat.location

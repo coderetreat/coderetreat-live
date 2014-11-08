@@ -28,6 +28,19 @@ a {
   @include outer-container;
 }
 
+.coderetreats {
+  overflow: hidden;
+  .coderetreat {
+    padding: $gutter;
+    background: white;
+    @include span-columns(4 of 12);
+    &:nth-child(3n) {
+      @include omega;
+    }
+    margin-bottom: $gutter;
+  }
+}
+
 .actions {
   margin-top: 1em;
   ul {
