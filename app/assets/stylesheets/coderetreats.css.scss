@@ -29,7 +29,6 @@ a {
 }
 
 .coderetreats {
-  overflow: hidden;
   .coderetreat {
     padding: $gutter;
     background: white;
@@ -38,7 +37,9 @@ a {
       @include omega;
     }
     margin-bottom: $gutter;
+    box-shadow: 0 2px 4px 0 black;
   }
+  @include clearfix;
 }
 
 .actions {
