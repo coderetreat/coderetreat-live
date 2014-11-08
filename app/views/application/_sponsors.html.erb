@@ -1,10 +1,15 @@
 <section class="sponsors">
 <h2>We love our sponsors!</h2>
 
-<div class="sponsor-level galaxy">
-  <h3>Galaxy Sponsors</h3>
+<% {
+  galaxy: galaxy_sponsors,
+  globe: globe_sponsors,
+  continent: continent_sponsors,
+}.each do |level, sponsors| %>
+<div class="sponsor-level <%=level%>">
+  <h3><%=level.to_s.titleize%> Sponsors</h3>
   <div class="sponsors-container">
-    <% galaxy_sponsors.each do |sponsor| %>
+    <% sponsors.each do |sponsor| %>
       <div class="sponsor <%=sponsor.name.downcase%>">
         <a href="<%= sponsor.url %>">
           <img src="<%=sponsor.logo_path%>" alt="<%=sponsor.name%>"></img>
@@ -13,30 +18,5 @@
     <% end %>
   </div>
 </div>
-
-<div class="sponsor-level globe">
-  <h3>Globe Sponsors</h3>
-  <div class="sponsors-container">
-    <% globe_sponsors.each do |sponsor| %>
-      <div class="sponsor <%=sponsor.name.downcase%>">
-        <a href="<%= sponsor.url %>">
-          <img src="<%=sponsor.logo_path%>" alt="<%=sponsor.name%>"></img>
-        </a>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-<div class="sponsor-level continent">
-  <h3>Continent Sponsors</h3>
-  <div class="sponsors-container">
-    <% continent_sponsors.each do |sponsor| %>
-      <div class="sponsor <%=sponsor.name.downcase%>">
-        <a href="<%= sponsor.url %>">
-          <img src="<%=sponsor.logo_path%>" alt="<%=sponsor.name%>"></img>
-        </a>
-      </div>
-    <% end %>
-  </div>
-</div>
+<% end %>
 </section>
