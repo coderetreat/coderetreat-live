@@ -1,11 +1,6 @@
 @import "normalize";
 
-// Place all the styles related to the coderetreat controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 // Colour values
-$nightRider: #1B120D; //background
 $fuelYellow: #F0A130; //Headers
 $tiaMaria: #D73513; //Links, Nav Boxes
 $lemonChiffon: #FFFACB; //Text Blocks
@@ -34,7 +29,10 @@ $eclipse: #312118; //Boarders
 	margin:0 0 .5em;
 }
 
-body {background:$nightRider; font:76%/1.3 Arial,Helvetica,sans-serif;}
+body {
+  background: $light;
+  font: $body-font;
+}
 
 h1, h2, h3 {@include titletxt;}
 h1 {font-size:2.75em;}
