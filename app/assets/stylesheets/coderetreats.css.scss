@@ -30,14 +30,23 @@ a {
 
 .coderetreats {
   .coderetreat {
-    padding: $gutter;
-    background: white;
     @include span-columns(4 of 12);
-    &:nth-child(3n) {
-      @include omega;
+    &:nth-child(3n) { @include omega; }
+    position: relative;
+    .map {
+      border-radius: 50%;
+      box-shadow: 0 2px 4px 0 black;
+      position: absolute;
+      @include span-columns(1 of 4);
     }
-    margin-bottom: $gutter;
-    box-shadow: 0 2px 4px 0 black;
+    .information {
+      @include span-columns(3.4 of 4);
+      @include shift(.6);
+      padding: $gutter;
+      background: white;
+      margin-bottom: $gutter;
+      box-shadow: 0 2px 4px 0 black;
+    }
   }
   @include clearfix;
 }

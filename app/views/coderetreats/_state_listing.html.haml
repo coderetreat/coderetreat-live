@@ -3,4 +3,8 @@
     %h2=human_view_coderetreat_status(state)
   .coderetreats
     -@coderetreats.by_status(state) do |coderetreat|
-      %li.coderetreat=coderetreat.location
+      .coderetreat
+        %img.map{src: google_map_image_for(coderetreat.location)}
+        .information
+          %h3=coderetreat.location
+          .constraints=simple_format coderetreat.current_session_constraints
