@@ -97,10 +97,27 @@ section.sessions {
   }
 }
 
-section.sponsor img {
-  width: 150px;
-}
-
-section.sponsor.giveaways img {
-  margin-bottom: 15px;
+.sponsors {
+  @include outer-container;
+  .sponsor-level {
+    @include fill-parent;
+    h3 { @include span-columns(4 of 12); }
+    .sponsors-container { @include span-columns(8 of 12); }
+    padding-top: $gutter;
+    overflow: hidden;
+    &.globe .sponsor { @include span-columns(4); }
+    &.continent .sponsor { @include span-columns(3);}
+    .sponsor {
+      float: left;
+      img {
+        @include fill-parent;
+        @include clearfix;
+      }
+    }
+  }
+  .new-sponsor {
+    border-top: 1px dashed $dark;
+    @include span-columns(8 of 12);
+    @include shift(4);
+  }
 }
