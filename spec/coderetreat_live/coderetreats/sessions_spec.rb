@@ -1,8 +1,8 @@
 require 'coderetreats/sessions'
 
 describe "Starting a new session" do
-  let(:coderetreat) { stub }
-  let(:session) { stub }
+  let(:coderetreat) { double }
+  let(:session) { double }
   describe ".for_coderetreat" do
     before do
       CoderetreatLive::Coderetreats.stub(:for_admin_token) { coderetreat }
@@ -47,7 +47,7 @@ describe "Starting a new session" do
     end
 
     it "returns the session that was started" do
-      CoderetreatLive::Coderetreats::Sessions.start_new_session_for("token", stub).should == session
+      CoderetreatLive::Coderetreats::Sessions.start_new_session_for("token", double).should == session
     end
   end
 

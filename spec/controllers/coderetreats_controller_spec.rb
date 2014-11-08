@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe CoderetreatsController do
+describe CoderetreatsController, type: :controller do
   describe "GET /running_today" do
-    let(:coderetreats_lookup) { stub }
-    let(:coderetreats) { stub(:empty? => true) }
+    let(:coderetreats_lookup) { double }
+    let(:coderetreats) { double(:empty? => true) }
 
     before do
       stub_const("CoderetreatLive::Coderetreats", coderetreats_lookup)

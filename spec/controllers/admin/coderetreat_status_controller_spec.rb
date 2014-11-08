@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Admin::CoderetreatStatusController do
-  let(:coderetreat_lookup) { stub }
-  let(:coderetreat) { stub(admin_token: "token") }
+describe Admin::CoderetreatStatusController, type: :controller do
+  let(:coderetreat_lookup) { double }
+  let(:coderetreat) { double(admin_token: "token") }
   before do
     stub_const("CoderetreatLive::Coderetreats", coderetreat_lookup)
   end
