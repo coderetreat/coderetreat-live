@@ -46,6 +46,19 @@ a {
       background: white;
       margin-bottom: $gutter;
       box-shadow: 0 2px 4px 0 black;
+      .constraints {
+        max-height: 4em;
+        overflow: scroll;
+        .previous, .current {
+          span {
+            margin-left: $gutter - 1em;
+          }
+          line-height: $gutter;
+        }
+        .previous {
+          opacity: 0.5;
+        }
+      }
     }
   }
   @include clearfix;

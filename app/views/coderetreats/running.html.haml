@@ -17,7 +17,14 @@
         %img.map{src: google_map_image_for(coderetreat.location)}
         .information
           %h3=coderetreat.location
-          .constraints=simple_format coderetreat.current_session_constraints
+          .constraints
+            .current
+              %img{src: "https://raw.githubusercontent.com/twitter/twemoji/gh-pages/16x16/25b6.png"}
+              %span= coderetreat.current_session_constraints
+            -coderetreat.previous_sessions.each do |session|
+              .previous
+                %img{src: "https://raw.githubusercontent.com/twitter/twemoji/gh-pages/16x16/2714.png"}
+                %span= session.constraints
 
 =render partial: "state_listing",
   collection: CoderetreatLive::Coderetreats::StateMachine::RUNNING_NON_SESSION_STATES,
