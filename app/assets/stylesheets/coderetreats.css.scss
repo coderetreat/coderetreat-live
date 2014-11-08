@@ -25,6 +25,8 @@ a {
 }
 
 .container {
+  margin-top: $gutter;
+  margin-bottom: $gutter;
   @include outer-container;
 }
 

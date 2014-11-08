@@ -21,8 +21,6 @@
       <%= yield %>
     </div>
 
-    <%= render 'application/sponsors' %>
-
     <% if Rails.env.production? %>
       <%= render 'application/analytics' %>
     <% end %>
