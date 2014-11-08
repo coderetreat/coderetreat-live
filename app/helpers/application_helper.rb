@@ -4,22 +4,12 @@ module ApplicationHelper
     "&style=feature:all|element:labels|visibility:off"
   end
 
-  def galaxy_sponsors
-    [
-      Sponsor.new('Thoughtworks', 'http://www.thoughtworks.com/')
-    ]
-  end
-
-  def globe_sponsors
-    [
-      Sponsor.new('Github', 'https://github.com'),
-    ]
-  end
-
-  def continent_sponsors
-    [
-      Sponsor.new('DNSimple', 'https://www.dnsimple.com/'),
-    ]
+  def all_sponsors
+    {
+      galaxy: [ Sponsor.new('Thoughtworks', 'http://www.thoughtworks.com/') ],
+      globe: [ Sponsor.new('Github', 'https://github.com') ],
+      continent: [ Sponsor.new('DNSimple', 'https://www.dnsimple.com/') ],
+    }
   end
 
   class Sponsor
