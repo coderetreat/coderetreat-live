@@ -25,7 +25,7 @@
   }
 }
 .sessions {
-  .coderetreat_status {
+  h1, h2 {
     opacity: 0.3;
   }
   text-align: left;
@@ -51,13 +51,32 @@ form {
   }
 }
 
-.current_session {
-  ul.actions {
-    padding-left: 0px;
-    li { display: inline; }
+@mixin fancy-link($primary: $green, $secondary: $light) {
+  color: $primary;
+  transition: color .25s linear;
+  transition: background-color .25s linear;
+  &:hover {
+    text-decoration: none;
+    background-color: $primary;
+    color: $secondary;
   }
 }
-
 .session_info {
   @include card;
+  .actions {
+    $border: none;
+    border-top: $border;
+    a {
+      width: 49%;
+      display: inline-block;
+      text-align: center;
+      border-right: $border;
+      &:last-child { border-right: none; }
+      padding-top: $gutter/2;
+      padding-bottom: $gutter/2;
+      @include fancy-link;
+      &.remove { @include fancy-link($red); }
+    }
+  }
+  padding-bottom: 0;
 }

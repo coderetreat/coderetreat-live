@@ -5,6 +5,11 @@
   %p.constraints
     Constraints:
     =session.constraints
-  %ul.actions
-    %li=link_to "remove", coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @coderetreat.current_session), :method => :delete
-    %li.action=link_to "edit", edit_coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: session)
+  .actions
+    =link_to "Edit",
+      edit_coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: session),
+      class: "edit"
+    =link_to "Remove",
+      coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @coderetreat.current_session),
+      :method => :delete,
+      class: "remove"

@@ -27,7 +27,8 @@
     .current
       =render "session", session: @coderetreat.current_session
 
-  - unless @coderetreat.previous_sessions.empty?
+  - if @coderetreat.previous_sessions.any?
+    %h2 Completed
     .previous
       -@coderetreat.previous_sessions.each do |session|
         = render 'session', session: session
