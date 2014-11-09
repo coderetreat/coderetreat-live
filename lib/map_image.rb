@@ -23,7 +23,9 @@ class MapImage
     @response = HTTParty.get(request_url)
     if @response.code == 200
       FileUtils.mkdir_p(directory_root)
-      File.write(cache_path, @response.body)
+      File.open(cache_path, "wb") do |f|
+        f.write(@response.body)
+      end
     end
   end
 
