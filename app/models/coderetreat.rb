@@ -23,7 +23,7 @@ class Coderetreat < ActiveRecord::Base
   end
 
   def start_new_session(session_params)
-    sessions.create session_params
+    sessions.create with_constraints(session_params)
   end
 
   def update_session_info(session_id, session_params)
@@ -52,5 +52,22 @@ class Coderetreat < ActiveRecord::Base
 
   def set_default_attribute_values
     self.status ||= CoderetreatLive::Coderetreats::StateMachine.default_state_string
+  end
+
+  protected
+
+  def with_constraints(session_params)
+    if empty_constraints?(session_params)
+      session_params["constraints"] = next_session_default_constraint
+    end
+    session_params
+  end
+
+  def empty_constraints?(session_params)
+    session_params["constraints"].to_s == ''
+  end
+
+  def next_session_default_constraint
+    "Session #{sessions.count+1}"
   end
 end

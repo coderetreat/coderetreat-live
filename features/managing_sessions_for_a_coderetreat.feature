@@ -11,6 +11,12 @@ Feature: Managing sessions for a running coderetreat
     Then I should see the coderetreat is in the status "In session"
     And I should see the current session's constraint is "no ifs"
 
+  Scenario: Starting a new session with no constraints
+    When I start a new session
+      | constraints |
+      |             |
+    Then I should see the current session's constraint is "Session 2"
+
   Scenario: Deleting the current session
     When I start a new session
       | constraints |
