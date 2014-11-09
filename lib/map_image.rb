@@ -11,19 +11,39 @@ class MapImage
   end
 
   def image_path
-    "/map_images/#{@location}.png"
+    if @response.code == 200
+      location_uri
+    else
+      default_image_uri
+    end
   end
 
   protected
   def fetch_image_unless_cached
-    response = HTTParty.get('https://maps.googleapis.com')
-    if response.code == 200
-      FileUtils.mkdir_p(images_path)
-      File.write("#{images_path}/London.png", response.body)
+    @response = HTTParty.get('https://maps.googleapis.com')
+    if @response.code == 200
+      FileUtils.mkdir_p(directory_root)
+      File.write(cache_path, @response.body)
     end
   end
 
-  def images_path
+  def directory_root
     "public/map_images"
+  end
+
+  def uri_root
+    "/map_images"
+  end
+
+  def cache_path
+    File.expand_path("#{@location}.png", directory_root)
+  end
+
+  def location_uri
+    File.expand_path("#{@location}.png", uri_root)
+  end
+
+  def default_image_uri
+    File.expand_path("default.png", uri_root)
   end
 end

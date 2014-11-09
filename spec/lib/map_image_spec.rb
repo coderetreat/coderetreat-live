@@ -33,6 +33,12 @@ describe MapImage do
 
         expect(File.exist?("public/map_images/London.png")).to be_falsey
       end
+
+      it "returns a default image path" do
+        stub_rate_limit_response
+
+        expect(MapImage.for("London")).to eq "/map_images/default.png"
+      end
     end
   end
 
