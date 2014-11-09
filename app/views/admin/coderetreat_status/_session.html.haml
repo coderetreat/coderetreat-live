@@ -1,10 +1,8 @@
 .session_info{id: "session_#{session.id}"}
+  %h3=session.constraints
   %p.started_at
     Started Around:
     =session.created_at.to_time.strftime("%H:%m %p")
-  %p.constraints
-    Constraints:
-    =session.constraints
   .actions
     =link_to "Edit",
       edit_coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: session),
