@@ -46,7 +46,6 @@ a {
       @include span-columns(3.4 of 4);
       @include shift(.6);
       @include card;
-      margin-bottom: $gutter;
       .constraints {
         max-height: 4em;
         overflow: scroll;
