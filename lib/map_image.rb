@@ -20,7 +20,7 @@ class MapImage
 
   protected
   def fetch_image_unless_cached
-    @response = HTTParty.get('https://maps.googleapis.com')
+    @response = HTTParty.get(request_url)
     if @response.code == 200
       FileUtils.mkdir_p(directory_root)
       File.write(cache_path, @response.body)
@@ -45,5 +45,22 @@ class MapImage
 
   def default_image_uri
     File.expand_path("default.png", uri_root)
+  end
+
+  def request_url
+    "https://maps.googleapis.com/maps/api/staticmap?#{request_parameter_string}"
+  end
+
+  def request_parameter_string
+    request_parameters.join("&")
+  end
+
+  def request_parameters
+    [
+      "markers=#{@location}",
+      "size=100x100",
+      "style=feature:all%7Celement:labels%7Cvisibility:off",
+      "zoom=1",
+    ]
   end
 end

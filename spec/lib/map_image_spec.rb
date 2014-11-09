@@ -11,7 +11,22 @@ describe MapImage do
   end
 
   context "when a cached version is not available" do
-    it "stores an image from Google" do
+    it "requests the image from Google" do
+      stub_regular_response
+
+      MapImage.for("London")
+
+      WebMock.should have_requested(
+        :get,
+        "https://maps.googleapis.com/maps/api/staticmap" +
+        "?markers=London" +
+        "&size=100x100" +
+        "&zoom=1" +
+        "&style=feature:all|element:labels|visibility:off"
+      )
+    end
+
+    it "stores the image in the cache" do
       stub_regular_response(body: "image_contents")
 
       MapImage.for("London")
