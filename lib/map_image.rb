@@ -11,42 +11,45 @@ class MapImage
   end
 
   def image_path
-    if @response.code == 200
-      location_uri
+    if File.exist? cache_path
+      cache_path
     else
-      default_image_uri
+      default_image_path
     end
   end
 
   protected
   def fetch_image_unless_cached
-    @response = HTTParty.get(request_url)
-    if @response.code == 200
-      FileUtils.mkdir_p(directory_root)
-      File.open(cache_path, "wb") do |f|
-        f.write(@response.body)
-      end
+    unless File.exist? cache_path
+      fetch_image
     end
   end
 
-  def directory_root
+  def fetch_image
+    response = HTTParty.get(request_url)
+
+    if response.code == 200
+      write_image response.body
+    end
+  end
+
+  def write_image contents
+    FileUtils.mkdir_p(image_root)
+    File.open(cache_path, "wb") do |f|
+      f.write(contents)
+    end
+  end
+
+  def image_root
     "public/map_images"
   end
 
-  def uri_root
-    "/map_images"
-  end
-
   def cache_path
-    File.expand_path("#{@location}.png", directory_root)
+    File.join(image_root, "#{@location}.png")
   end
 
-  def location_uri
-    File.expand_path("#{@location}.png", uri_root)
-  end
-
-  def default_image_uri
-    File.expand_path("default.png", uri_root)
+  def default_image_path
+    File.join(image_root, "default.png")
   end
 
   def request_url
