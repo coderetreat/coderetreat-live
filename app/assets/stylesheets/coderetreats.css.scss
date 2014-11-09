@@ -5,6 +5,7 @@
 
 @import "colors";
 @import "fonts";
+@import "mixins";
 
 body {
   background: $light;
@@ -44,10 +45,8 @@ a {
     .information {
       @include span-columns(3.4 of 4);
       @include shift(.6);
-      padding: $gutter;
-      background: white;
+      @include card;
       margin-bottom: $gutter;
-      box-shadow: 0 2px 4px 0 black;
       .constraints {
         max-height: 4em;
         overflow: scroll;
@@ -64,52 +63,6 @@ a {
     }
   }
   @include clearfix;
-}
-
-.actions {
-  margin-top: 1em;
-  ul {
-    list-style-type: none;
-    padding-left: 10px;
-    li {
-      display: inline;
-      margin-right: 10px;
-    }
-  }
-  a {
-    border: 1px solid orange;
-    background: orange;
-    padding: 10px;
-    text-shadow: -1px -1px 2px #618926;
-    border-radius: 25px;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
-    cursor: pointer;
-    color: $dark;
-    text-decoration: none;
-    font-size: 1.25em;
-  }
-}
-
-.session_info {
-  p {
-    font-size: 1.75em;
-  }
-}
-
-section.sessions {
-  margin-top: 25px;
-
-  section.session_information {
-    margin-top: 3em;
-  }
-
-  .session_info {
-    margin-top: 1em;
-    border-bottom: 1px solid orange;
-    padding-left: 20px;
-    padding-bottom: 5px;
-  }
 }
 
 .sponsors {

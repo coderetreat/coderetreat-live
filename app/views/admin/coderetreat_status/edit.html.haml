@@ -1,55 +1,31 @@
-%section.actions.status_update
-  %header
-    %h3 Update Status Of Coderetreat
-  %ul
-    %li=link_to "Not Started", coderetreat_status_path(id: @coderetreat.admin_token, :status => "not_started"), :method => :put
-    %li=link_to "On Break",    coderetreat_status_path(id: @coderetreat.admin_token, :status => "on_break"), :method => :put
-    %li=link_to "At Lunch",    coderetreat_status_path(id: @coderetreat.admin_token, :status => "at_lunch"), :method => :put
-    %li=link_to "Finished",    coderetreat_status_path(id: @coderetreat.admin_token, :status => "finished"), :method => :put
+.admin-console
+  %h1=@coderetreat.location
 
-%header
-  %h2
-    =@coderetreat.location
-    %br
-    Current Status:
-    %span.coderetreat_status=human_view_coderetreat_status(@coderetreat.status)
-
--if @coderetreat.in_session?
-  %section.current_session.session_info{id: "session_#{@coderetreat.current_session.id}"}
-    %p.started_at
-      Started Around:
-      =@coderetreat.current_session.created_at.to_time.strftime("%H:%m %p")
-    %p.constraints
-      Constraints:
-      =simple_format @coderetreat.current_session_constraints
-    %ul.actions
-      %li.action=link_to "remove", coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @coderetreat.current_session), :method => :delete
-      %li.action=link_to "edit", edit_coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @coderetreat.current_session)
-
-%section.sessions
-
-  %section.create_new
+  .actions.status_update
     %header
-      %h2 Start A New Session
+      %h3 Update Status Of Coderetreat
+    %ul
+      %li=link_to "Not Started", coderetreat_status_path(id: @coderetreat.admin_token, :status => "not_started"), :method => :put
+      %li=link_to "On Break",    coderetreat_status_path(id: @coderetreat.admin_token, :status => "on_break"), :method => :put
+      %li=link_to "At Lunch",    coderetreat_status_path(id: @coderetreat.admin_token, :status => "at_lunch"), :method => :put
+      %li=link_to "Finished",    coderetreat_status_path(id: @coderetreat.admin_token, :status => "finished"), :method => :put
+
+  .create-new
+    %header
+      %h3 Start A New Session
     =form_for CoderetreatSession.new, url: coderetreat_sessions_path(coderetreat_id: @coderetreat.admin_token) do |f|
-      =f.submit "Start"
-      %br
-      =f.label :constraints, "With these constraints (optional)"
-      %br
+      =f.label :constraints, "Constraints"
       =f.text_area :constraints
+      =f.submit "Start"
+
+.sessions
+  %h1.coderetreat_status=human_view_coderetreat_status(@coderetreat.status)
+
+  -if @coderetreat.in_session?
+    .current
+      =render "session", session: @coderetreat.current_session
 
   - unless @coderetreat.previous_sessions.empty?
-    %section.previous_sessions
-      %h2
-        Sessions so far
-      -@coderetreat.sessions.each do |session|
-        %section.session_info{id: "session_#{session.id}"}
-          %ul.actions
-            %li=link_to "remove", coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @coderetreat.current_session), :method => :delete
-            %li.action=link_to "edit", edit_coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: session)
-          %p.started_at
-            Started Around:
-            =session.created_at.to_time.strftime("%H:%m %p")
-          %p.constraints
-            Constraints:
-            =simple_format session.constraints
+    .previous
+      -@coderetreat.previous_sessions.each do |session|
+        = render 'session', session: session
