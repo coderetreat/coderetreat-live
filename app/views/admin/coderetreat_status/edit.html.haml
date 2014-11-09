@@ -5,15 +5,17 @@
     %header
       %h3 Update Status Of Coderetreat
     %ul
-      %li=link_to "Not Started", coderetreat_status_path(id: @coderetreat.admin_token, :status => "not_started"), :method => :put
-      %li=link_to "On Break",    coderetreat_status_path(id: @coderetreat.admin_token, :status => "on_break"), :method => :put
-      %li=link_to "At Lunch",    coderetreat_status_path(id: @coderetreat.admin_token, :status => "at_lunch"), :method => :put
-      %li=link_to "Finished",    coderetreat_status_path(id: @coderetreat.admin_token, :status => "finished"), :method => :put
+      -%w[not_started on_break at_lunch finished].each do |status|
+        %li=link_to(status.titleize,
+          coderetreat_status_path(id: @coderetreat.admin_token, status: status),
+          method: :put,
+          class: status)
 
   .create-new
     %header
       %h3 Start A New Session
-    =form_for CoderetreatSession.new, url: coderetreat_sessions_path(coderetreat_id: @coderetreat.admin_token) do |f|
+    =form_for CoderetreatSession.new,
+      url: coderetreat_sessions_path(coderetreat_id: @coderetreat.admin_token) do |f|
       =f.label :constraints, "Constraints"
       =f.text_area :constraints
       =f.submit "Start"
