@@ -28,6 +28,7 @@ group :test do
   gem 'rake'
   gem 'database_cleaner', require: false
   gem 'cucumber-rails', require: false
+  gem 'fakefs'
 end
 
 group :development, :test do
