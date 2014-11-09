@@ -8,6 +8,6 @@
       edit_coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: session),
       class: "edit"
     =link_to "Remove",
-      coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: @coderetreat.current_session),
+      coderetreat_session_path(coderetreat_id: @coderetreat.admin_token, id: session),
       :method => :delete,
       class: "remove"
