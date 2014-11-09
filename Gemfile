@@ -14,6 +14,8 @@ gem 'unicorn'
 
 gem 'neat', '~> 1.6.0'
 
+gem 'httparty'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -28,7 +30,8 @@ group :test do
   gem 'rake'
   gem 'database_cleaner', require: false
   gem 'cucumber-rails', require: false
-  gem 'fakefs'
+  gem 'fakefs', require: 'fakefs/safe'
+  gem 'webmock'
 end
 
 group :development, :test do
