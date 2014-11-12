@@ -3,7 +3,11 @@ $LOAD_PATH.unshift("#{Rails.root}/app/coderetreat_live")
 require 'coderetreats'
 def create_event(location)
   puts "Creating event at #{location}"
-  Coderetreat.create location: location
+  Coderetreat.create(
+    location: location,
+    status: CoderetreatLive::Coderetreats::StateMachine.default_state_string,
+    date: DateTime.civil_from_format(:utc, 2014, 11, 15, 0, 0)
+  )
 end
 namespace :gdcr do
   task :create_events => :environment do
