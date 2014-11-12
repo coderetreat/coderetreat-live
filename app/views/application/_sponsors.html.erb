@@ -1,0 +1,18 @@
+<section class="sponsors">
+<h2>We love our sponsors!</h2>
+
+<% all_sponsors.each do |level, level_sponsors| %>
+<div class="sponsor-level <%=level%>">
+  <h3><%=level.to_s.titleize%> Sponsors</h3>
+  <div class="sponsors-container">
+    <% level_sponsors.each do |sponsor| %>
+      <div class="sponsor <%=sponsor.name.downcase%>">
+        <a href="<%= sponsor.url %>">
+          <img src="<%=sponsor.logo_path%>" alt="<%=sponsor.name%>"></img>
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>
+<% end %>
+</section>

@@ -37,6 +37,14 @@ describe "Managing sessions" do
       session = coderetreat.start_new_session({"constraints" => "no ifs"})
       session.constraints.should == "no ifs"
     end
+
+    it "creates a default constraint if none is provided" do
+      coderetreat = Coderetreat.create
+      session = coderetreat.start_new_session({"constraints" => nil})
+      session.constraints.should == "Session 1"
+      session = coderetreat.start_new_session({"constraints" => ""})
+      session.constraints.should == "Session 2"
+    end
   end
 
   describe "#in_session?" do

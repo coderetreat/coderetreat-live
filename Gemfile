@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+ruby '2.1.2'
 
-gem 'rails', '3.2.9'
+gem 'rails', '~> 3.2.20'
 gem 'jquery-rails'
 
 gem 'sass'
@@ -12,13 +12,17 @@ gem 'has_tokens'
 gem 'newrelic_rpm'
 gem 'unicorn'
 
+gem 'neat', '~> 1.6.0'
+
+gem 'httparty'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development do
+group :development, :test do
   gem 'rspec-rails'
 end
 
@@ -26,7 +30,8 @@ group :test do
   gem 'rake'
   gem 'database_cleaner', require: false
   gem 'cucumber-rails', require: false
-  gem 'rspec-rails', require: false
+  gem 'fakefs', require: 'fakefs/safe'
+  gem 'webmock'
 end
 
 group :development, :test do
@@ -36,4 +41,3 @@ end
 group :production do
   gem 'pg'
 end
-

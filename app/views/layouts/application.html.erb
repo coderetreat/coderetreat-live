@@ -1,69 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="description" content="The Global Day of Coderetreat as a day when developers all over the world will be practicing the fundamentals of software development." />
-  <%= yield :head %>
-  <link rel="icon" type="image/png" href="/assets/gdcr-favicon.ico">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="The Global Day of Coderetreat as a day when developers all over the world will be practicing the fundamentals of software development." />
+    <%= yield :head %>
+    <link rel="icon" type="image/png" href="/assets/gdcr-favicon.ico">
 
-  <title>Coderetreat Live! - Coordination for simultaneous coderetreat events</title>
+    <title>Coderetreat Live! - Coordination for simultaneous coderetreat events</title>
 
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="wrapper">
+    <%= stylesheet_link_tag    "application" %>
+    <link href='http://fonts.googleapis.com/css?family=Amaranth:700|Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
 
-	<header class="branding">
-		<a id="logo" href="/"><img src="/assets/gdcr-world.png" alt="logo"/></a>
-		<h1><a href="/">Global Day of Coderetreat - honing the craft together...all over the world</a></h1>
-	</header>
+  <body class="live">
+    <%= render 'application/navigation' %>
 
-	<aside>
-      <header>
-      <h2>Global Sponsors</h2>
-      </header>
+    <div class="container">
+      <%= yield %>
+    </div>
 
-      <section class="sponsors">
-        <header>Thanks to our Global Sponsors</header>
-        <section class='sponsor globe'>
-          <header>Globe Level</header>
-          <a href="http://www.jetbrains.com/" alt="Jetbrains"><img src="http://gdcr.coderetreat.org/images/sponsors/jetbrains_logo.gif" alt="Thanks to Jetbrains for sponsoring!" /></a>
-          <a href="http://www.thoughtworks.com/" alt="Thoughtworks"><img src="http://gdcr.coderetreat.org/images/sponsors/thoughtworks_logo.png" alt="Thanks to Thoughtworks for sponsoring!" /></a>
-          <a href="http://github.com/" alt="Github"><img src="http://gdcr.coderetreat.org/images/sponsors/github_logo.png" alt="Thanks to Github for sponsoring!" /></a>
-        </section>
-        <section class='sponsor continent'>
-          <header>Continent Level</header>
-          <a href="http://www.dnsimple.com/" alt="DNSimple"><img src="http://gdcr.coderetreat.org/images/sponsors/dnsimple_logo.png" alt="Thanks to DNSimple for sponsoring!" /></a>
-          <a href="http://neo4j.org/?ref=gdcr2013" alt="Neo4j"><img src="http://gdcr.coderetreat.org/images/sponsors/neo4j_logo.png" alt="Thanks to Heroku for sponsoring!" /></a>
-        </section>
-        <footer>Thanks to all our global sponsors!</footer>
-      </section>
-
-	</aside>
-
-  <article>
-    <%= yield %>
-  </article>
-
-  </div>
-<% if Rails.env.production? %>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36848248-1']);
-  _gaq.push(['_setDomainName', 'coderetreat.org']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-<% end %>
-
-</body>
+    <% if Rails.env.production? %>
+      <%= render 'application/analytics' %>
+    <% end %>
+  </body>
 </html>

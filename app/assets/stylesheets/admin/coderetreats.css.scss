@@ -1,61 +1,82 @@
 // Place all the styles related to the admin/coderetreats controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bourbon";
+@import "neat";
 
-.actions.status_update {
-  float: right;
-  width: 135px;
-  border: 1px dotted orange;
-  border-right: 0px;
-  padding: 10px;
-  padding-right: 0px;
-  margin-right: -10px;
+@import "../mixins";
+@import "../colors";
+
+.admin-console {
+  @include span-columns(6 of 12);
+  text-align: right;
   ul {
-    float: right;
-    margin-top: -15px;
+    list-style: none;
     li {
-      display: block;
-      margin-top: 35px;
+      display: inline-block;
+      a {
+        @include button($green);
+        color: $light;
+      }
     }
   }
+  .create-new {
+    margin-top: $gutter;
+  }
 }
+.sessions {
+  h1, h2 {
+    opacity: 0.3;
+  }
+  text-align: left;
+  @include span-columns(6 of 12);
+}
+
 
 form {
-
-  input[type=submit] {
-    margin-left: 0px;
-    width: 100px;
-  }
-
   label {
     font-weight: bold;
+    @include span-columns(2 of 6);
   }
-
   textarea {
-    height: 5em;
-    width: 300px;
+    @include span-columns(4 of 6);
+    @include omega;
+    height: 3em;
+  }
+  input[type=submit] {
+    margin-top: $gutter;
+    @include button($green);
+    color: $light;
+    width: 100px;
   }
 }
 
-.current_session {
-  ul.actions {
-    padding-left: 0px;
-    li {
-      display: inline;
+@mixin fancy-link($primary: $green, $secondary: $light) {
+  color: $primary;
+  transition: color .25s linear;
+  transition: background-color .25s linear;
+  &:hover {
+    text-decoration: none;
+    background-color: $primary;
+    color: $secondary;
+  }
+}
+.session_info {
+  @include card;
+  .actions {
+    $border: none;
+    border-top: $border;
+    a {
+      width: 49%;
+      display: inline-block;
+      text-align: center;
+      border-right: $border;
+      &:last-child { border-right: none; }
+      padding-top: $gutter/2;
+      padding-bottom: $gutter/2;
+      @include fancy-link;
+      &.remove { @include fancy-link($red); }
     }
   }
+  padding-bottom: 0;
 }
-
-.previous_sessions {
-  .session_info {
-    clear: both;
-  }
-  ul.actions {
-    float: right;
-    list-style-type: none;
-    li {
-      height: 50px;
-    }
-  }
-}
-

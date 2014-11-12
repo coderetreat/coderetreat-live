@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Admin::CoderetreatSessionsController do
-  let(:session_manager) { stub }
-  let(:coderetreat) { stub(admin_token: "token") }
+describe Admin::CoderetreatSessionsController, type: :controller do
+  let(:session_manager) { double }
+  let(:coderetreat) { double(admin_token: "token") }
   before do
     stub_const("CoderetreatLive::Coderetreats::Sessions", session_manager)
   end
@@ -22,7 +22,7 @@ describe Admin::CoderetreatSessionsController do
 
   describe "GET /edit" do
     it "retrieves the coderetreat and session" do
-      session = stub("session")
+      session = double("session")
       session_manager.stub(:for_coderetreat).with("token", "4") { [session, coderetreat] }
 
       get :edit, coderetreat_id: "token", id: "4"

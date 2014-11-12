@@ -2,18 +2,36 @@
   %meta{"http-equiv" => "refresh", :content => "600"}
 
 %h1 Global Day of Coderetreat Events
-%h3 This is the main page for showing events that are running on December 14th, 2013, for the #{link_to "Global Day of Coderetreat", "http://globalday.coderetreat.org"}. As events begin/end, sessions begin/end, this page should update with information about which events are at which phase.
+%p
+  This is the main page for showing events that are running on December 14th,
+  2013, for the #{link_to "Global Day of Coderetreat", "http://globalday.coderetreat.org"}.
+  As events and sessions begin and end, this page will update with information
+  about which events are at which phase.
 
 %section.coderetreats.in_session
   %header
     %h2 In Session
-  %ul
+  .coderetreats
     -@coderetreats.in_session do |coderetreat|
-      %li.coderetreat
-        =coderetreat.location
-        .constraints=simple_format coderetreat.current_session_constraints
+      .coderetreat
+        %img.map{src: google_map_image_for(coderetreat.location)}
+        .information
+          %h3=coderetreat.location
+          .constraints
+            .current
+              %img{src: "https://raw.githubusercontent.com/twitter/twemoji/gh-pages/16x16/25b6.png"}
+              %span= coderetreat.current_session_constraints
+            -coderetreat.previous_sessions.each do |session|
+              .previous
+                %img{src: "https://raw.githubusercontent.com/twitter/twemoji/gh-pages/16x16/2714.png"}
+                %span= session.constraints
 
-=render partial: "state_listing", collection: CoderetreatLive::Coderetreats::StateMachine::RUNNING_NON_SESSION_STATES, :as => :state
+=render partial: "state_listing",
+  collection: CoderetreatLive::Coderetreats::StateMachine::RUNNING_NON_SESSION_STATES,
+  :as => :state
 
-=render partial: "state_listing", collection: CoderetreatLive::Coderetreats::StateMachine::NOT_RUNNING_STATES, :as => :state
+=render partial: "state_listing",
+  collection: CoderetreatLive::Coderetreats::StateMachine::NOT_RUNNING_STATES,
+  :as => :state
 
+= render 'application/sponsors'

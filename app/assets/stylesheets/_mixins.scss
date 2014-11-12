@@ -1,0 +1,6 @@
+@mixin card {
+  padding: $gutter;
+  background: white;
+  box-shadow: 0 2px 4px 0 black;
+  margin-bottom: $gutter;
+}

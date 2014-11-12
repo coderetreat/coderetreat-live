@@ -11,10 +11,10 @@ describe "State machine for Coderetreats" do
       not_in_session_statuses = (CoderetreatLive::Coderetreats::StateMachine::STATES - [in_session_status])
 
       not_in_session_statuses.each do |status|
-        CoderetreatLive::Coderetreats::StateMachine.in_session_status?(status).should be_false
+        CoderetreatLive::Coderetreats::StateMachine.in_session_status?(status).should be_falsey
       end
 
-      CoderetreatLive::Coderetreats::StateMachine.in_session_status?(in_session_status).should be_true
+      CoderetreatLive::Coderetreats::StateMachine.in_session_status?(in_session_status).should be_truthy
     end
   end
 

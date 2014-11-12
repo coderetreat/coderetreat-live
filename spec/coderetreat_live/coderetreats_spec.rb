@@ -7,14 +7,14 @@ describe "Coderetreat list" do
   describe "#empty?" do
     it "returns if passed in collection is empty" do
       coderetreats.should be_empty
-      collection << stub
+      collection << double
       coderetreats.should_not be_empty
     end
   end
 
   describe "filtering the collection passed in by status" do
-    let(:coderetreat1) { stub(:status => "") }
-    let(:coderetreat2) { stub(:status => "") }
+    let(:coderetreat1) { double(:status => "") }
+    let(:coderetreat2) { double(:status => "") }
     before do
       collection << coderetreat1 << coderetreat2
     end
@@ -41,7 +41,7 @@ describe "Coderetreat list" do
   describe "Looking up different lists of coderetreats" do
     describe ".running_today" do
       it "returns the list from the Coderetreat.running_today scope" do
-        scope_provider = stub
+        scope_provider = double
         stub_const("Coderetreat", scope_provider)
         collection.stub(:includes) { collection }
 
@@ -54,8 +54,8 @@ describe "Coderetreat list" do
   end
 
   context "working with an individual item" do
-    let(:coderetreat) { stub(admin_token: "token") }
-    let(:scope_provider) { stub }
+    let(:coderetreat) { double(admin_token: "token") }
+    let(:scope_provider) { double }
     before do
       stub_const("Coderetreat", scope_provider)
       scope_provider.stub(:for_admin).with("token") { coderetreat }
