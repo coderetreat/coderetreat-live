@@ -12,7 +12,7 @@ class MapImage
 
   def image_path
     if File.exist? cache_path
-      cache_path
+      map_image_path
     else
       default_image_path
     end
@@ -34,18 +34,30 @@ class MapImage
   end
 
   def write_image contents
-    FileUtils.mkdir_p(image_root)
+    FileUtils.mkdir_p(cache_root)
     File.open(cache_path, "wb") do |f|
       f.write(contents)
     end
   end
 
+  def public_root
+    "public"
+  end
+
   def image_root
-    "public/map_images"
+    "/map_images"
+  end
+
+  def cache_root
+    File.join(public_root, image_root)
+  end
+
+  def map_image_path
+    File.join(image_root, "#{@location}.png")
   end
 
   def cache_path
-    File.join(image_root, "#{@location}.png")
+    File.join(public_root, map_image_path)
   end
 
   def default_image_path

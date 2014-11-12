@@ -8,37 +8,13 @@ describe MapImagesController, type: :controller do
       stub_const("MapImage", map_imager)
     end
 
-    it "serves the file specified by MapImage" do
-      FakeFS.activate!
+    it "redirects the user to the file specified by MapImage" do
       FileUtils.mkdir_p "public/map_images"
 
-      path = "public/map_images/London.png"
-      File.write(path, "image_contents")
-      map_imager.stub(:for => path)
+      map_imager.stub(:for => "/map_images/London.png")
 
       get :show, location: "London"
-      response.should eq 200
-      response.body should eq "image_contents"
-
-      FakeFS.deactivate!
-    end
-
-    context "some coderetreats running today" do
-      it "renders running" do
-        coderetreats.stub(:empty? => false)
-
-        get :London
-        response.should have_rendered("running")
-      end
-    end
-
-    context "no coderetreats running today" do
-      it "renders running_no_coderetreats" do
-        coderetreats.stub(:empty? => true)
-
-        get :London
-        response.should have_rendered("none_running")
-      end
+      expect(response).to redirect_to("/map_images/London.png")
     end
   end
 end

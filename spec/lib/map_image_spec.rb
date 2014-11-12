@@ -37,7 +37,7 @@ describe MapImage do
     it "returns the path to the newly stored image" do
       stub_regular_response
       expect(File.exist?("public/map_images/London.png")).to be_falsey
-      expect(MapImage.for("London")).to eq "public/map_images/London.png"
+      expect(MapImage.for("London")).to eq "/map_images/London.png"
     end
 
     context "when we hit the rate limit" do
@@ -52,7 +52,7 @@ describe MapImage do
       it "returns a default image path" do
         stub_rate_limit_response
 
-        expect(MapImage.for("London")).to eq "public/map_images/default.png"
+        expect(MapImage.for("London")).to eq "/map_images/default.png"
       end
     end
   end
