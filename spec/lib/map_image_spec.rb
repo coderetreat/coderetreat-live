@@ -40,6 +40,23 @@ describe MapImage do
       expect(MapImage.for("London")).to eq "/map_images/London.png"
     end
 
+    context "when the location contains non-URL-safe characters" do
+      it "requests the image from Google" do
+        stub_regular_response
+
+        MapImage.for("Lübeck, Germany")
+
+        WebMock.should have_requested(
+          :get,
+          "https://maps.googleapis.com/maps/api/staticmap" +
+          "?markers=L%C3%BCbeck%2C+Germany" +
+          "&size=100x100" +
+          "&zoom=1" +
+          "&style=feature:all|element:labels|visibility:off"
+        )
+      end
+    end
+
     context "when we hit the rate limit" do
       it "does not store the returned image" do
         stub_rate_limit_response

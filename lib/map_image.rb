@@ -6,7 +6,7 @@ class MapImage
   end
 
   def initialize(location)
-    @location = location
+    @location = CGI.escape location
     fetch_image_unless_cached
   end
 
