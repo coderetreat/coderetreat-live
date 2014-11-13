@@ -1,9 +1,14 @@
 require 'map_image'
 require 'fakefs/safe'
 require "webmock/rspec"
+require 'digest/md5'
+
 WebMock.disable_net_connect!(allow_localhost: true)
 
 describe MapImage do
+
+  london_hash = Digest::MD5.hexdigest("London")
+
   before { FakeFS.activate! }
   after do
     FileUtils.rm_r("public") rescue nil
@@ -31,13 +36,13 @@ describe MapImage do
 
       MapImage.for("London")
 
-      expect(File.read("public/map_images/London.png")).to eq "image_contents"
+      expect(File.read("public/map_images/#{london_hash}.png")).to eq "image_contents"
     end
 
     it "returns the path to the newly stored image" do
       stub_regular_response
-      expect(File.exist?("public/map_images/London.png")).to be_falsey
-      expect(MapImage.for("London")).to eq "/map_images/London.png"
+      expect(File.exist?("public/map_images/#{london_hash}.png")).to be_falsey
+      expect(MapImage.for("London")).to eq "/map_images/#{london_hash}.png"
     end
 
     context "when the location contains non-URL-safe characters" do
@@ -63,7 +68,7 @@ describe MapImage do
 
         MapImage.for("London")
 
-        expect(File.exist?("public/map_images/London.png")).to be_falsey
+        expect(File.exist?("public/map_images/#{london_hash}.png")).to be_falsey
       end
 
       it "returns a default image path" do
@@ -77,7 +82,7 @@ describe MapImage do
   context "when a cached version is available" do
     it "does not request the image from Google" do
       FileUtils.mkdir_p "public/map_images/"
-      FileUtils.touch "public/map_images/London.png"
+      FileUtils.touch "public/map_images/#{london_hash}.png"
 
       MapImage.for("London")
     end

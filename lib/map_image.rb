@@ -1,4 +1,5 @@
 require 'httparty'
+require 'digest/md5'
 
 class MapImage
   def self.for(location)
@@ -53,7 +54,8 @@ class MapImage
   end
 
   def map_image_path
-    File.join(image_root, "#{@location}.png")
+    locationHash = Digest::MD5.hexdigest @location
+    File.join(image_root, "#{locationHash}.png")
   end
 
   def cache_path
