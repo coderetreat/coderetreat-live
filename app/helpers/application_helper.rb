@@ -1,6 +1,6 @@
 module ApplicationHelper
   def google_map_image_for(city)
-    "/map_images/#{CGI.escape city}"
+    "/maps/#{CGI.escape city}"
   end
 
   def all_sponsors

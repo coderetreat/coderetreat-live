@@ -8,7 +8,7 @@ CoderetreatLive::Application.routes.draw do
     resources :sessions, only: [:create, :edit, :update, :destroy], controller: "coderetreat_sessions"
   end
 
-  get "/map_images/:location", to: "map_images#show"
+  get "/maps/:location", to: "map_images#show"
 
   root to: "coderetreats#running_today"
 end
