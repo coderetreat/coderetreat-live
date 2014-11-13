@@ -1,157 +1,149 @@
-Buenos Aires, Argentina
-Brisbane, Australia
+Resistencia, Argentina
 Melbourne, Australia
-Perth , Australia
-Sydney, Australia
+Newcastle, Australia
+Graz, Austria
 Vienna, Austria
-Mechelen, Belgium
-Recife, Brazil
-São Paulo, Brazil
-Edmonton, Canada
-Montreal, Canada
-Summerside, PE, Canada
-Toronto, Canada
+Leuven, Belgium
+Cotonou, Benin
+Fortaleza, Brazil
+Plovdiv, Bulgaria
+Calgary, Canada
+Oshawa, Durham, Canada
+Quebec City, Canada
+Summerside, PEI, Canada
 Toronto, Canada
 Winnipeg, Canada
+Santiago, Chile
 Beijing, China
+Beijing, China
+Chengdu, China
 Hangzhou, China
 Shanghai, China
-Suzhou, China
+Shenzhen, China
 Taiyuan, China
-Bogotá D.C, Colombia
-San Jose , Costa Rica
+Tianjin, China
+Xi'an, China
+Bogota, Colombia
+Medellin, Colombia
+San Jose, Costa Rica
+Brno, Czech Republic
 Prague, Czech Republic
-Vsetín, Czech Republic
-Copenhagen, Denmark
+Vsetin, Czech Republic
+Quito, Ecuador
 Quito, Ecuador
 Turku, Finland
 Bordeaux, France
 Lyon, France
 Paris, France
+Paris, France
 Toulouse, France
 Berlin, Germany
 Bielefeld, Germany
-Cologne, Germany
-Düsseldorf, Germany
-Hamburg, Germany
+Dresden, Germany
+Erlangen, Germany
+Essen, Germany
+Kassel, Germany
+Lübeck, Germany
 Munich, Germany
-Munich, Germany
-Münster, Germany
-Nürnberg, Germany
-Passau, Germany
-Wiesbaden, Germany
+Nuremberg, Germany
+Osnabrück, Germany
+Thessaloniki, Greece
 Budapest, Hungary
-Chennai, India
-Mumbai, India
-Dublin, Ireland
-Haifa, Israel
+Bangalore, India
+Hyderabad, India
+Pune, India
+Vadodara, India
 Tel Aviv, Israel
-Genoa, Italy
-Milan, Italy
-Fukuoka, Japan
+Padova, Italy
+Ravenna, Italy
+Trieste, Italy
 Matsuyama, Ehime, Japan
 Osaka, Japan
-Tokyo, Japan
 Riga, Latvia
+Kaunas, Lithuania
 Vilnius, Lithuania
 Skopje, Macedonia
-Colima, Mexico
 Guadalajara, Mexico
-Mexico City, Mexico
-Monterrey, Mexico
+Mazatlán, Mexico
+Oaxaca, Mexico
+Arnhem, Netherlands
+Utrecht, Netherlands
 Auckland, New Zealand
 Auckland, New Zealand
 Wellington, New Zealand
 Oslo, Norway
-Karachi, Pakistan
-Lima, Peru
-Bielsko-Biała, Poland
+Lima, Perú
+Gdańsk, Poland
+Katowice, Poland
 Kraków, Poland
-Łódź, Poland
 Poznań, Poland
+Warsaw, Poland
+Wroclaw, Poland
+Zielona Góra, Poland
+Łódź, Poland
+Brasov, Romania
 Bucharest, Romania
-Cluj-Napoca, Romania
+Bucharest, Romania
+Bucharest, Romania
 Cluj-Napoca, Romania
 Sibiu, Romania
 Timisoara, Romania
-Singapore, Singapore
-Ljubljana, Slovenia
 Cape Town, South Africa
 Durban, South Africa
 Johannesburg, South Africa
-Johannesburg, South Africa
 Barcelona, Spain
-Bilbao, Spain
-Donostia, Spain
+Ciudad Real, Spain
+Coruña, Spain
+Girona, Spain
+Las Palmas de Gran Canaria, Spain
 Madrid, Spain
-Santiago de Compostela, Spain
+Ourense, Spain
 Valencia, Spain
 Zaragoza, Spain
-Malmö, Sweden
 Stockholm, Sweden
-Stockholm, Sweden
-Umeå, Sweden
-Geneva, Switzerland
-Zürich, Switzerland
-Amsterdam, The Netherlands
-Groningen, The Netherlands
-Haarlem, The Netherlands
-Rotterdam, The Netherlands
-Tilburg, The Netherlands
+Zurich, Switzerland
+Bangkok, Thailand
 Istanbul, Turkey
-Odessa, Ukraine
-Aberdeen, Scotland, United Kingdom
-Cambridge, England, United Kingdom
-Edinburgh, Scotland, United Kingdom
-Glasgow, Scotland, United Kingdom
-London, England, United Kingdom
-London, England, United Kingdom
-London, England, United Kingdom
-Manchester, England, United Kingdom
-Peterborough, England, United Kingdom
-Sheffield, England, United Kingdom
-American Fork, UT, USA
+Aberdeen, UK
+Cambridge, UK
+London, UK
+London, UK
+London, UK
+Peterborough, UK
 Ann Arbor, MI, USA
+Arlington, VA, USA
+Athens, GA, USA
 Atlanta, GA, USA
-Boulder, CO, USA
-Cambridge, MA, USA
-Chandler, AZ, USA
+Austin, TX, USA
+Boston, MA, USA
+Burlington, VT, USA
+Carlsbad, CA, USA
 Chicago, IL, USA
 Cleveland, OH, USA
-Clifton Park, NY, USA
-Columbia, MD, USA
 Columbus, OH, USA
-Council Bluffs, IA, USA
 Denver, CO, USA
-Fairmont, WV, USA
-Flint, MI, USA
-Fort Collins, CO, USA
-Helena, MT, USA
+Des Moines, IA, USA
+Detroit, MI, USA
+Fairfax, VA, USA
+Farmington, UT, USA
+Hollywood, CA, USA
 Honolulu, HI, USA
-Houston, TX, USA
-Irvine, CA, USA
-Ithaca, NY, USA
-Kansas City, KS, USA
-Layton, UT, USA
 Lehi, UT, USA
-Louisville, KY, USA
-Madison, WI, USA
-Miami, FL, USA
-Minneapolis, MN, USA
-Mountain View, CA, USA
 New York City, NY, USA
-Norfolk, VA, USA
-Oak Ridge, TN, USA
-Orlando, FL, USA
-Pensacola, FL, USA
+Oakland, CA, USA
+Omaha, NE, USA
+Orlando, Fl, USA
+Philadelphia, PA, USA
 Pittsburgh, PA, USA
+Port Townsend, WA, USA
 Portland, OR, USA
-Reston, VA, USA
+Raleigh/Durham, NC, USA
 Rockaway, NJ, USA
-San Francisco, CA, USA
-Tampa, FL, USA
-Washington DC, USA
-Mérida, Venezuela
+Seattle, WA, USA
+Tampa/St. Petersburg, FL, USA
+Mbale, Uganda
+Kyiv, Ukraine
+Lviv, Ukraine
+Odessa, Ukraine
 Hanoi, Vietnam
-Ho Chi Minh City, Vietnam
 
