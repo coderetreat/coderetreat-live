@@ -14,3 +14,6 @@
 /log/*.log
 /tmp
 /public/map_images
+
+# Ignore local environment variable configurations
+.env

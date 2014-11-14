@@ -31,6 +31,31 @@ describe MapImage do
       )
     end
 
+    context "an API key is configured in an environment variable" do
+      before do
+        ENV['STATIC_MAPS_API_KEY'] = "someApiKey"
+      end
+      after do
+        ENV.delete('STATIC_MAPS_API_KEY')
+      end
+
+      it "use API key" do
+        stub_regular_response
+
+        MapImage.for("London")
+
+        WebMock.should have_requested(
+          :get,
+          "https://maps.googleapis.com/maps/api/staticmap" +
+          "?markers=London" +
+          "&size=100x100" +
+          "&zoom=1" +
+          "&style=feature:all|element:labels|visibility:off" +
+          "&key=someApiKey"
+        )
+      end
+    end
+
     it "stores the image in the cache" do
       stub_regular_response(body: "image_contents")
 

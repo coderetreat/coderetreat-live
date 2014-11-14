@@ -75,11 +75,18 @@ class MapImage
   end
 
   def request_parameters
-    [
+    addApiKeyIfAvailable([
       "markers=#{@location}",
       "size=100x100",
       "style=feature:all%7Celement:labels%7Cvisibility:off",
       "zoom=1",
-    ]
+    ])
+  end
+
+  def addApiKeyIfAvailable request_parameters
+    if ENV['STATIC_MAPS_API_KEY']
+      request_parameters.push("key=#{ENV['STATIC_MAPS_API_KEY']}")
+    end
+    request_parameters
   end
 end
