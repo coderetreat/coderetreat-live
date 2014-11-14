@@ -1,5 +1,5 @@
 require 'httparty'
-require 'digest/md5'
+require 'base64'
 
 class MapImage
   def self.for(location)
@@ -7,7 +7,7 @@ class MapImage
   end
 
   def initialize(location)
-    @location = CGI.escape location
+    @location = location
     fetch_image_unless_cached
   end
 
@@ -54,8 +54,8 @@ class MapImage
   end
 
   def map_image_path
-    locationHash = Digest::MD5.hexdigest @location
-    File.join(image_root, "#{locationHash}.png")
+    image_name = Base64.urlsafe_encode64 @location
+    File.join(image_root, "#{image_name}.png")
   end
 
   def cache_path
@@ -76,7 +76,7 @@ class MapImage
 
   def request_parameters
     addApiKeyIfAvailable([
-      "markers=#{@location}",
+      "markers=#{CGI.escape @location}",
       "size=100x100",
       "style=feature:all%7Celement:labels%7Cvisibility:off",
       "zoom=1",
