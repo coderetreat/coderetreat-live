@@ -6,10 +6,11 @@ def create_event(location)
   Coderetreat.create(
     location: location,
     status: CoderetreatLive::Coderetreats::StateMachine.default_state_string,
-    date: DateTime.civil_from_format(:utc, 2014, 11, 15, 0, 0)
+    date: DateTime.civil_from_format(:utc, 2015, 11, 14, 0, 0)
   )
 end
 namespace :gdcr do
+  desc "Creates Coderetreat Events"
   task :create_events => :environment do
     include Rails.application.routes.url_helpers
 

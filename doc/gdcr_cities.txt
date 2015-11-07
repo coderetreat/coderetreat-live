@@ -1,149 +1,145 @@
-Resistencia, Argentina
+Corrientes, Argentina
 Melbourne, Australia
-Newcastle, Australia
-Graz, Austria
 Vienna, Austria
-Leuven, Belgium
-Cotonou, Benin
+Dhaka, Bangladesh
+Minsk, Belarus
+Mogilev, Belarus
+Vitebsk, Belarus
 Fortaleza, Brazil
-Plovdiv, Bulgaria
 Calgary, Canada
-Oshawa, Durham, Canada
-Quebec City, Canada
-Summerside, PEI, Canada
 Toronto, Canada
 Winnipeg, Canada
 Santiago, Chile
 Beijing, China
-Beijing, China
 Chengdu, China
-Hangzhou, China
 Shanghai, China
 Shenzhen, China
 Taiyuan, China
-Tianjin, China
 Xi'an, China
-Bogota, Colombia
-Medellin, Colombia
-San Jose, Costa Rica
+Bogotá, Colombia
+Tres Ríos, Costa Rica
+Zagreb, Croatia
 Brno, Czech Republic
+Jihlava, Czech Republic
+Olomouc, Czech Republic
 Prague, Czech Republic
-Vsetin, Czech Republic
-Quito, Ecuador
-Quito, Ecuador
-Turku, Finland
-Bordeaux, France
+Lille, France
 Lyon, France
 Paris, France
-Paris, France
-Toulouse, France
 Berlin, Germany
 Bielefeld, Germany
-Dresden, Germany
+Braunschweig, Germany
+Erlangen, Germany
 Erlangen, Germany
 Essen, Germany
-Kassel, Germany
+Frankfurt am Main, Germany
+Fulda, Germany
+Karlsruhe, Germany
 Lübeck, Germany
 Munich, Germany
-Nuremberg, Germany
+Nürnberg, Germany
 Osnabrück, Germany
+Solingen, Germany
+Weinsberg, Germany
 Thessaloniki, Greece
-Budapest, Hungary
+Debrecen, Hungary
 Bangalore, India
 Hyderabad, India
+Mumbai, India
 Pune, India
-Vadodara, India
+Dublin, Ireland
 Tel Aviv, Israel
-Padova, Italy
-Ravenna, Italy
-Trieste, Italy
-Matsuyama, Ehime, Japan
+Milan, Italy
 Osaka, Japan
+Karaganda, Kazakhstan
 Riga, Latvia
 Kaunas, Lithuania
 Vilnius, Lithuania
 Skopje, Macedonia
-Guadalajara, Mexico
-Mazatlán, Mexico
+Mazatlan, Mexico
 Oaxaca, Mexico
+Aguascalientes, Mexico
 Arnhem, Netherlands
-Utrecht, Netherlands
 Auckland, New Zealand
 Auckland, New Zealand
-Wellington, New Zealand
-Oslo, Norway
 Lima, Perú
-Gdańsk, Poland
-Katowice, Poland
+Gdansk, Poland
+Katowice, Silesia, Poland
 Kraków, Poland
 Poznań, Poland
 Warsaw, Poland
+Warsaw, Poland
 Wroclaw, Poland
-Zielona Góra, Poland
 Łódź, Poland
 Brasov, Romania
-Bucharest, Romania
-Bucharest, Romania
 Bucharest, Romania
 Cluj-Napoca, Romania
 Sibiu, Romania
 Timisoara, Romania
+Moscow, Russia
+Saint-Petersburg, Russia
+Belgrade, Serbia
+Singapore, Singapore
+Bratislava, Slovakia
 Cape Town, South Africa
 Durban, South Africa
 Johannesburg, South Africa
+Alicante, Spain
 Barcelona, Spain
-Ciudad Real, Spain
-Coruña, Spain
-Girona, Spain
-Las Palmas de Gran Canaria, Spain
+Gran Canaria, Spain
+Logroño, Spain
 Madrid, Spain
 Ourense, Spain
 Valencia, Spain
 Zaragoza, Spain
+Gothenburg, Sweden
 Stockholm, Sweden
+Stockholm, Sweden
+Bern, Switzerland
+St. Gallen, Switzerland
 Zurich, Switzerland
-Bangkok, Thailand
 Istanbul, Turkey
-Aberdeen, UK
-Cambridge, UK
+Istanbul, Turkey
+Glasgow, UK
 London, UK
 London, UK
 London, UK
 Peterborough, UK
 Ann Arbor, MI, USA
 Arlington, VA, USA
-Athens, GA, USA
+Ashburn, VA, USA
 Atlanta, GA, USA
 Austin, TX, USA
+Bend, OR, USA
 Boston, MA, USA
-Burlington, VT, USA
-Carlsbad, CA, USA
 Chicago, IL, USA
 Cleveland, OH, USA
+Columbia, MD, USA
 Columbus, OH, USA
 Denver, CO, USA
 Des Moines, IA, USA
-Detroit, MI, USA
-Fairfax, VA, USA
-Farmington, UT, USA
-Hollywood, CA, USA
 Honolulu, HI, USA
 Lehi, UT, USA
+Los Angeles, CA, USA
 New York City, NY, USA
-Oakland, CA, USA
 Omaha, NE, USA
-Orlando, Fl, USA
-Philadelphia, PA, USA
+Parsippany, NJ, USA
 Pittsburgh, PA, USA
-Port Townsend, WA, USA
 Portland, OR, USA
-Raleigh/Durham, NC, USA
-Rockaway, NJ, USA
-Seattle, WA, USA
+Redmond, WA, USA
+San Diego, CA, USA
+San Jose, CA, USA
 Tampa/St. Petersburg, FL, USA
-Mbale, Uganda
 Kyiv, Ukraine
 Lviv, Ukraine
-Odessa, Ukraine
-Hanoi, Vietnam
+Hangzhou, China
+Brest, Belarus
+Grodno, Belarus
+Dresden, Germany
+Medford, MA, USA
+Gomel, Belarus
+Beijing, China
+Manila, Philippines
+Manizales, Colombia
+Guadalajara, Mexico
 
