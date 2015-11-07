@@ -5,9 +5,13 @@ module ApplicationHelper
 
   def all_sponsors
     {
-      galaxy: [ Sponsor.new('Thoughtworks', 'http://www.thoughtworks.com/') ],
-      globe: [ Sponsor.new('Github', 'https://github.com') ],
-      continent: [ Sponsor.new('DNSimple', 'https://www.dnsimple.com/') ],
+      continent: [
+        Sponsor.new('8th Light', 'https://8thlight.com/'),
+        Sponsor.new('Zopa', 'http://www.zopa.com/'),
+      ],
+      timezone: [
+        Sponsor.new('ThoughtWorks', 'http://www.thoughtworks.com'),
+      ]
     }
   end
 
