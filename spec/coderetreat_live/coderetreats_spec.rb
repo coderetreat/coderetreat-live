@@ -45,6 +45,7 @@ describe "Coderetreat list" do
         stub_const("Coderetreat", scope_provider)
         collection.stub(:includes) { collection }
 
+        scope_provider.stub(:order) { scope_provider }
         scope_provider.stub(:running_today) { collection }
 
         running_today = CoderetreatLive::Coderetreats.running_today
