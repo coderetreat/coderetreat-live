@@ -22,7 +22,7 @@ namespace :gdcr do
       end
     end
 
-    output = File.open("#{Rails.root}/doc/gdcr_cities_admin_urls.tab", "w+")
+    output = File.open("#{Rails.root}/doc/gdcr_cities_admin_urls.tsv", "w+")
     events.each do |event|
       exp = "#{event.location}\t#{event.admin_token}\t#{edit_coderetreat_status_url(coderetreat_id: event.admin_token, host: "live.coderetreat.org")}\n"
       puts exp
