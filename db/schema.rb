@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121205154218) do
+ActiveRecord::Schema.define(:version => 20151111093506) do
 
   create_table "coderetreat_sessions", :force => true do |t|
     t.text     "constraints",    :default => ""
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20121205154218) do
   create_table "coderetreats", :force => true do |t|
     t.string   "status"
     t.string   "location"
-    t.date     "date"
+    t.datetime "date"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "admin_token"
